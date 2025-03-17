@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "dgSpecHash": "2zCAWNDXRQs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marcu\\Documents\\Gokstad\\Emne 9\\RogueSharp-Tutorial\\RogueSharp-Tutorial\\RogueSharp-Tutorial.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.3\\microsoft.win32.systemevents.9.0.3.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\opentk\\1.1.1589.5942\\opentk.1.1.1589.5942.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\rlnet\\1.0.6\\rlnet.1.0.6.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\roguesharp\\3.0.0\\roguesharp.3.0.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\system.drawing.common\\9.0.3\\system.drawing.common.9.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OpenTK 1.1.1589.5942' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OpenTK",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RLNET 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RLNET",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RogueSharp 3.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RogueSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}
