@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://g66gnj0ffuv6"]
+
+[ext_resource type="Script" uid="uid://bmdnprvwrxg43" path="res://Scripts/Game.cs" id="1_g5j3c"]
+[ext_resource type="PackedScene" uid="uid://c0y5i5tlxl5sy" path="res://Nodes/Entities/Player/Player.tscn" id="2_6hfer"]
+[ext_resource type="PackedScene" uid="uid://cwkmtx0phy7oc" path="res://Nodes/Entities/Enemies/Goblin.tscn" id="3_1sokt"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_g5j3c")
+
+[node name="Player" parent="." instance=ExtResource("2_6hfer")]
+scale = Vector2(4.84, 4.84)
+
+[node name="Goblin" parent="." instance=ExtResource("3_1sokt")]
+position = Vector2(-115, -75)
+scale = Vector2(3.48, 3.48)
+collision_layer = 4
+collision_mask = 33
+
+[node name="Camera2D" type="Camera2D" parent="."]
