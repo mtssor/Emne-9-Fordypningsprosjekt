@@ -1,9 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwkmtx0phy7oc"]
+[gd_scene load_steps=31 format=3 uid="uid://cwkmtx0phy7oc"]
 
 [ext_resource type="Texture2D" uid="uid://dfqbdsfos0ly3" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_idle_spritesheet.png" id="1_1yt0u"]
+[ext_resource type="Script" uid="uid://y5qe7e760wxx" path="res://Scripts/Entities/Enemies/Enemy.cs" id="1_3hhqp"]
 [ext_resource type="Texture2D" uid="uid://cjsycnkei4jkb" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_spritesheet.png" id="2_cbcmu"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="3_nh0y8"]
+[ext_resource type="Script" uid="uid://cxwh5eo5bt66c" path="res://Scripts/Components/Hurtbox.cs" id="3_w7j3y"]
+[ext_resource type="Texture2D" uid="uid://bq4ocsq7mmhgb" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="4_0qcsa"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="4_w7j3y"]
+[ext_resource type="Texture2D" uid="uid://dxifndyo7eykl" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_spritesheet.png" id="5_j4p65"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hhqp"]
+radius = 5.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nh0y8"]
 atlas = ExtResource("1_1yt0u")
@@ -102,20 +110,111 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh0y8"]
-radius = 5.0
-height = 14.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd8hl"]
+atlas = ExtResource("4_0qcsa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ktjn"]
+atlas = ExtResource("4_0qcsa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gqbm"]
+atlas = ExtResource("4_0qcsa")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihdle"]
+atlas = ExtResource("4_0qcsa")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6agof"]
+atlas = ExtResource("5_j4p65")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhn7t"]
+atlas = ExtResource("5_j4p65")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vhp1"]
+atlas = ExtResource("5_j4p65")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imr63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd8hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ktjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gqbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihdle")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6agof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhn7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vhp1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 15.0
+}]
 
 [node name="Goblin" type="CharacterBody2D"]
 z_index = 1
+collision_layer = 32
+collision_mask = 9
+script = ExtResource("1_3hhqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_3hhqp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hd8hl")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="AnimatedEffects" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+scale = Vector2(1.875, 1.875)
+sprite_frames = SubResource("SpriteFrames_imr63")
+animation = &"Hit"
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 25
+script = ExtResource("3_w7j3y")
+metadata/_custom_type_script = "uid://cxwh5eo5bt66c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 visibility_layer = 0
-shape = SubResource("CapsuleShape2D_nh0y8")
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_3hhqp")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_nh0y8")
