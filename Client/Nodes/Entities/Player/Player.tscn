@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="5_0tcod"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="7_ig8mh"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_oyse3"]
-[ext_resource type="Script" uid="uid://cc14cutwnfuir" path="res://Scripts/Entities/Player/PlayerMoveComponent.cs" id="8_4bh11"]
+[ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Scripts/Entities/Player/Components/PlayerMoveComponent.cs" id="8_oyse3"]
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="9_jqtth"]
-[ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="9_oyse3"]
+[ext_resource type="PackedScene" uid="uid://b8x4reovls432" path="res://Nodes/Entities/Weapons/sword.tscn" id="9_oyse3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig8mh"]
 atlas = ExtResource("2_42706")
@@ -112,13 +112,14 @@ height = 25.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_mask = 36
+collision_layer = 8
+collision_mask = 33
 motion_mode = 1
 script = ExtResource("1_26xe5")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7xjlk")
-animation = &"Idle"
+animation = &"Move"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StartingState")]
 script = ExtResource("5_0tcod")
@@ -138,7 +139,7 @@ AnimationName = "Move"
 metadata/_custom_type_script = "uid://cde3i6tvml3ry"
 
 [node name="MoveComponent" parent="." instance=ExtResource("7_oyse3")]
-script = ExtResource("8_4bh11")
+script = ExtResource("8_oyse3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -147,14 +148,4 @@ position = Vector2(1, 1)
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CapsuleShape2D_4bh11")
 
-[node name="Sword" type="Node2D" parent="."]
-
-[node name="Node2D" type="Node2D" parent="Sword"]
-rotation = -1.5708
-
-[node name="Sprite2D" type="Sprite2D" parent="Sword/Node2D"]
-z_index = 1
-position = Vector2(7, 3)
-rotation = -0.785398
-texture = ExtResource("9_oyse3")
-offset = Vector2(5, -4)
+[node name="Sword" parent="." instance=ExtResource("9_oyse3")]

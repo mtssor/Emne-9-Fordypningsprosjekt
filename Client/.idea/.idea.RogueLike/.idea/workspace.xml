@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e8bb33cc-012c-4c03-8d9a-7b79e944fe15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Scripts/CustomTypes/Attributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/CustomTypes/Weapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/Systems/StateMachine/Interfaces/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Game Project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Game Project/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Game Project/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Game Project/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Game Project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Game Project.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RogueLike.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Game Project.sln" beforeDir="false" afterPath="$PROJECT_DIR$/RogueLike.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nodes/Entities/Player/Player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Nodes/Entities/Player/Player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nodes/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Nodes/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Components/Interfaces/IMoveComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Components/Interfaces/IMoveComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Entities/Enemies/Monsters/Goblin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Entities/Enemies/Monsters/Goblin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Entities/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Entities/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Entities/Player/PlayerMoveComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Entities/Player/PlayerMoveComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Systems/StateMachine/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Systems/StateMachine/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Systems/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Systems/StateMachine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Systems/StateMachine/States/Idle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Systems/StateMachine/States/Idle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Systems/StateMachine/States/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Systems/StateMachine/States/Move.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Scripts/Entities/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2uXZG4EuFfND0lH4WI7VaDBIfY2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Executable.Player.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "danica",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.build.godotPlugin",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected=".NET Executable.Player">
+    <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
+      <option name="address" value="127.0.0.1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../../../../../Game&amp;Mod&amp;SystemUtilities/Godot_v4.4-stable_mono_win64/Godot_v4.4-stable_mono_win64.exe" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\foxiecat.DESKTOP-7MFF3K5\Documents\1. Programming\School\Year 2\Emne-9-Fordypningsprosjekt\Client" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Player" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../../../../../Game&amp;Mod&amp;SystemUtilities/Godot_v4.4-stable_mono_win64/Godot_v4.4-stable_mono_win64.exe" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\foxiecat.DESKTOP-7MFF3K5\Documents\1. Programming\School\Year 2\Emne-9-Fordypningsprosjekt\Client" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8bb33cc-012c-4c03-8d9a-7b79e944fe15" name="Changes" comment="" />
+      <created>1742396781260</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742396781260</updated>
+      <workItem from="1742396782814" duration="1710000" />
+      <workItem from="1742399436719" duration="3945000" />
+      <workItem from="1742477275240" duration="8797000" />
+      <workItem from="1742551707242" duration="1768000" />
+      <workItem from="1742561231999" duration="1566000" />
+      <workItem from="1742644361301" duration="2389000" />
+      <workItem from="1742661484014" duration="2243000" />
+      <workItem from="1742724538830" duration="2000" />
+      <workItem from="1742724973981" duration="457000" />
+      <workItem from="1742726651551" duration="3591000" />
+      <workItem from="1742735852397" duration="9954000" />
+      <workItem from="1742925086408" duration="1918000" />
+      <workItem from="1742931019225" duration="3016000" />
+      <workItem from="1742940727094" duration="90000" />
+      <workItem from="1743083497879" duration="538000" />
+      <workItem from="1743084137527" duration="3092000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/danica" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/danica" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

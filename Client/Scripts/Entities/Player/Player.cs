@@ -8,18 +8,21 @@ public partial class Player : CharacterBody2D
 {
 	public AnimatedSprite2D PlayerAnimations { get; set; }
 	public StateMachine PlayerStateMachine { get; set; }
-	public PlayerMoveComponent PlayerMoveComponent  { get; set; }
+	public Components.PlayerMoveComponent PlayerMoveComponent  { get; set; }
+
+	private AnimationPlayer _swordAnimation;
 	
 	public Node2D Sword { get; set; }
 	
 	public override void _Ready()
 	{
-		PlayerAnimations = GetNode("Animations") as AnimatedSprite2D;
-		PlayerStateMachine = GetNode("StateMachine") as StateMachine;
-		PlayerMoveComponent = GetNode("MoveComponent") as PlayerMoveComponent;
-		
-		Sword = GetNode("Sword") as Node2D;
-		
+		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");
+		PlayerStateMachine = GetNode<StateMachine>("StateMachine");
+		PlayerMoveComponent = GetNode<Components.PlayerMoveComponent>("MoveComponent");
+
+		Sword = GetNode<Node2D>("Sword");
+		_swordAnimation = Sword.GetNode<AnimationPlayer>("SwordAnimation");
+
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 	}
 
@@ -44,11 +47,15 @@ public partial class Player : CharacterBody2D
 		};
 
 		Sword.Rotation = mouseDirection.Angle();
-		if (Sword.Scale.Y == 1 && mouseDirection.X < 0)
-			Sword.Scale = Sword.Scale with { Y = -1 };
-		else if (Sword.Scale.Y == -1 && mouseDirection.X > 0)
-			Sword.Scale = Sword.Scale with { Y = 1 };
+		Sword.Scale = Sword.Scale.Y switch
+		{
+			1 when mouseDirection.X < 0 => Sword.Scale with { Y = -1 },
+			-1 when mouseDirection.X > 0 => Sword.Scale with { Y = 1 },
+			_ => Sword.Scale
+		};
 		
+		if (Input.IsActionPressed("ui_attack") && !_swordAnimation.IsPlaying())
+			_swordAnimation.Play("sword_attack");
 
 		PlayerStateMachine.ProcessFrame(delta);
 	}
