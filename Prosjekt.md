@@ -19,8 +19,11 @@
    - 4.3 [Instillinger](#43-instillinger)
 5. [Utfordringer og risikoer](#5-utfordringer-og-risikoer)
    - 5.1 [Tekniske utfordringer](#51-tekniske-utfordringer)
-6. [Misc](#6-misc)
-   - 6.1 [CD/CD](#61-cicd)
+   - 5.2 [Design utfordringer](#52-design-utfordringer)
+   - 5.3 [Brukeropplevelse utfordringer](#53-brukeropplevelse-utfordringer)
+   - 5.4 [Testing utfordringer](#54-testing-utfordringer)
+   - 5.5 [Risikodempende tiltak](#55-risikodempende-tiltak)
+6. [CI/CD](#6-cicd)
 
 
 ## 1. Introduksjon
@@ -69,13 +72,13 @@ Systemarkitekturen er hovedsakelig en stor service laget med Godot. De forskjell
     - Spiller skal ikke kunne gå gjennom vegger eller fiender
     - Når Player hitbox kommer i kontakt med en fiender eller fiende angrep så skal skade registreres 
 
-4. **Map**
+4**Map**
    - Forskjellige sammensatte rom som spilleren beveger seg rundt i
    - Fiender plassert i alle rom utenom starting rommet. 
    - Bruk av gratis tiles for å lage designet til de forskjellige elementene i rommene
    - Random generation skal brukes for å lage variasjon for hver gang en bruker starter spillet. Genereringen må ha regler slik at rom alltid blir lagd med en viss størrelse, form, fiender osv.
 
-5. **Combat**
+5**Combat**
    - Det vil være tilfeldige våpen tilgjengelig for spilleren. Sverd, crossbow, hammer osv.
    - Forskjellige animasjoner som passer våpentypen i bruk
    - Forskjellig mengder skade fra våpen avhengig av hva som gir mening for typen. For eksempel: 
@@ -144,7 +147,43 @@ Sydd sammen så skal komponenten lage en spill opplevelse som er spennende og ti
 ## 5. Utfordringer og risikoer
 
 ### 5.1 Tekniske utfordringer
+   - Godot er nytt for oss alle, så det er mye å lære utenom bare selve koding delen
+   - Pathfinding for fiender kan være vanskelig å implementere og balansere
+   - Kan være vanskelig å lage animasjon, random generation, maps osv. som ikke påvirker ytelse alt for mye
+   - Bruke for mye tid på å perfeksjonere noe. Hvis noe man koder er 95% ferdig etter 4 timer, så er det nok lurere å starte på neste del istedet for å bruke 4 timer til for å få det til 100%
 
-## 6. Misc
+### 5.2 Design utfordringer
+   - Random map generation -> passe på at det ikke lages maps som ikke er mulig å fullføre
+   - Kan være vanskelig å skape meningsfull variasjon. Vi vil at hvert playthrough skal føles "nytt", men vi må passe på at det ikke blir rotete
+   - Balansering av vanskelighetsgraden.
+     - Er det for lett så blir man fort ferdig og vil kanskje ikke spille igjen
+     - Er det for vanskelig så gir man kanskje opp
+   - Det kan være fort gjort å komme på masse ideer mens man utvikler, men det er viktig å fokusere på de viktigste tingene. Hvis man prøver å legge til alt for mye på en gang så kan det gjør slutt produktet dårligere
 
-### 6.1 CI/CD
+### 5.3 Brukeropplevelse utfordringer
+   - Klarhet over hva som faktisk skjer. Det er viktig at spilleren lett får meg seg at de blir angripet, at de tok skade, at de døde. Ting burde ikke komme som en overaskelse
+   - Både player og kamera movement må være presist. Vil føre til dårlig brukeropplevelse hvis spilleren blir truffet av ting de føler de skulle kommet seg unna
+
+### 5.4 Testing utfordringer
+   - Ved bruk av randomly generated maps så kan det være vanskelig å finne alle bugs under testing. Kan være at noen bugs bare oppstår veldig sjeldent 
+   - Generelt vanskelig å teste for alle mulige feil med det team på 3. Uten massiv bruker tilbakemelding så vil man mest sannsynelig aldri finne alle feil
+
+### 5.5 Risikodempende tiltak
+   - Fokuser på de få hoveddelene av planen. Når man først har fått i gang skjelettet til spillet så kan man legge til ekstra ting man har hatt lyst til underveis
+   - Bruk av debud kommandoer for testing av forskjellige elementer. Tvinger "spawn" av visse maps, items, fiender, osv.
+   - Automated test for random map generation
+   - Bruker feedback for å lettere forstå hva man kanskje burde gjøre videre
+
+## 6. CI/CD
+   - GitHub
+     - Vi kommer til å bruke branching gjennom utvikling
+     - Vi vil ha "main" main også en Development main, som er den vi tar fra
+     - Så lager vi brancher for hver ny thing vi utvikler. Når det er ferdig så blir det da pushet til Development main. Til slutt vil alt gå inn i Main main
+   - Testing
+     - GUT for unit testing 
+     - Custom scripts
+     - Teste ytelse. Logge fps og memory bruk osv. 
+     - Scene tester. Sjekke at ting fungerer som det skal, ingen krasjing
+   - Gruppe kommunisering
+     - Discord. Bruker dette for det aller meste av både skriftlig og muntlig kommunikajson
+     - Trello. Bruker dette for å holde styr på hva som har blitt gjort, hva som må gjøres, hvem som skal gjøre det, osv.
