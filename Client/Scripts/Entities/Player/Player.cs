@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using NewGameProject.Scripts.Entities.Player.Components;
 using NewGameProject.Scripts.Systems.StateMachine;
 
 namespace NewGameProject.Scripts.Entities.Player;
