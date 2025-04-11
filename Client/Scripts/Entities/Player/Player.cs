@@ -1,4 +1,6 @@
+using System;
 using Godot;
+using NewGameProject.Scripts.Entities.Player.Components;
 using NewGameProject.Scripts.Systems.StateMachine;
 
 namespace NewGameProject.Scripts.Entities.Player;
@@ -6,22 +8,23 @@ namespace NewGameProject.Scripts.Entities.Player;
 [GlobalClass]
 public partial class Player : CharacterBody2D
 {
+	private AnimationPlayer _playerAnimations;
+	
 	public AnimatedSprite2D PlayerAnimations { get; set; }
 	public StateMachine PlayerStateMachine { get; set; }
-	public Components.PlayerMoveComponent PlayerMoveComponent  { get; set; }
+	public PlayerMoveComponent PlayerMoveComponent  { get; set; }
 
-	private AnimationPlayer _swordAnimation;
-	
-	public Node2D Sword { get; set; }
+
+	public Node2D Weapon { get; set; }
 	
 	public override void _Ready()
 	{
 		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");
 		PlayerStateMachine = GetNode<StateMachine>("StateMachine");
-		PlayerMoveComponent = GetNode<Components.PlayerMoveComponent>("MoveComponent");
+		PlayerMoveComponent = GetNode<PlayerMoveComponent>("MoveComponent");
 
-		Sword = GetNode<Node2D>("Sword");
-		_swordAnimation = Sword.GetNode<AnimationPlayer>("SwordAnimation");
+		Weapon = GetNode<Node2D>("Weapon");
+		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 	}
@@ -38,25 +41,21 @@ public partial class Player : CharacterBody2D
 
 	public override void _Process(double delta)
 	{
-		Vector2 mouseDirection = (GetGlobalMousePosition() - GlobalPosition).Normalized();
-		PlayerAnimations.FlipH = mouseDirection.X switch
+		Vector2 currentMouseDirection = (GetGlobalMousePosition() - GlobalPosition).Normalized();
+		PlayerAnimations.FlipH = currentMouseDirection.X switch
 		{
 			> 0 when PlayerAnimations.FlipH => false,
 			< 0 when !PlayerAnimations.FlipH => true,
 			_ => PlayerAnimations.FlipH
 		};
-
-		Sword.Rotation = mouseDirection.Angle();
-		Sword.Scale = Sword.Scale.Y switch
-		{
-			1 when mouseDirection.X < 0 => Sword.Scale with { Y = -1 },
-			-1 when mouseDirection.X > 0 => Sword.Scale with { Y = 1 },
-			_ => Sword.Scale
-		};
 		
-		if (Input.IsActionPressed("ui_attack") && !_swordAnimation.IsPlaying())
-			_swordAnimation.Play("sword_attack");
-
+		// Weapon
+		Weapon.Rotation = currentMouseDirection.Angle();
+		if (Input.IsActionPressed("ui_attack") && !_playerAnimations.IsPlaying())
+			_playerAnimations.Play("sword");
+		
 		PlayerStateMachine.ProcessFrame(delta);
 	}
+
+	
 }

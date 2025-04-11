@@ -14,6 +14,10 @@ config/name="RogueLike"
 run/main_scene="uid://g66gnj0ffuv6"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
+[autoload]
+
+SignalBus="res://Scripts/Systems/Utilities/SignalBus.cs"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
@@ -64,9 +68,9 @@ ui_attack={
 2d_physics/layer_2="Hitbox"
 2d_physics/layer_3="Hurtbox"
 2d_physics/layer_4="Player"
-2d_physics/layer_5="Player Attack"
+2d_physics/layer_5="Player attack"
 2d_physics/layer_6="Enemy"
-2d_physics/layer_7="Enemy Attack"
+2d_physics/layer_7="Enemy attack"
 
 [rendering]
 
