@@ -5,6 +5,6 @@
     <RootNamespace>NewGameProject</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Scripts\Systems\" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
 </Project>

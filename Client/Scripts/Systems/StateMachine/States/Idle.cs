@@ -1,5 +1,4 @@
 using Godot;
-using NewGameProject.Scripts.Components.Interfaces;
 
 namespace NewGameProject.Scripts.Systems.StateMachine.States;
 
