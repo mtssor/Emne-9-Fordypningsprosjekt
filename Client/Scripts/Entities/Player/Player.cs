@@ -16,6 +16,7 @@ public partial class Player : CharacterBody2D
 	public PlayerMoveComponent PlayerMoveComponent  { get; set; }
 
 
+	// references weapon nodes, children of the "Weapon" Node2D under Player
 	public Node2D Weapon { get; set; }
 	public Node2D Crossbow { get; set; }
 
@@ -57,46 +58,59 @@ public partial class Player : CharacterBody2D
 		
 		PlayerAnimations.FlipH = currentMouseDirection.X switch
 		{
-> 0 when PlayerAnimations.FlipH => false,
+			> 0 when PlayerAnimations.FlipH => false,
 			< 0 when !PlayerAnimations.FlipH => true,
 			_ => PlayerAnimations.FlipH
 		};
 
-		// Weapons
-		if (Input.IsActionJustPressed("weapon_sword"))
-		{
-			//_activeWeapon.Visible = false;
-			_activeWeapon = Weapon;
-			//_activeWeapon.Visible = true;
-		}
-		else if (Input.IsActionJustPressed("weapon_crossbow"))
-		{
-			//_activeWeapon.Visible = false;
-			_activeWeapon = Crossbow;
-			//_activeWeapon.Visible = true;
-		}
-		
-		
-		
-		if (Input.IsActionJustPressed("ui_attack"))
-		{
-			_activeWeapon.Visible = true;
-			
-			if (_activeWeapon is Crossbow crossbow)
-			{
-				crossbow.Fire(currentMouseDirection);
-			}
-			else
-			{
-				if (!_playerAnimations.IsPlaying())
-					_playerAnimations.Play("sword");
-			}
-			
-			GetTree().CreateTimer(0.2f).Connect("timeout", new Callable(this, nameof(HideWeapon)));
-		}
-		
-		PlayerStateMachine.ProcessFrame(delta);
-	}
+if (_activeWeapon != null)
+        {
+            _activeWeapon.Rotation = currentMouseDirection.Angle();
+        }
+
+        if (Input.IsActionJustPressed("weapon_sword"))
+        {
+            _activeWeapon = Weapon;
+        }
+        else if (Input.IsActionJustPressed("weapon_crossbow"))
+        {
+            _activeWeapon = Crossbow;
+        }
+        
+        if (_activeWeapon is Crossbow crossbow)
+        {
+            if (Input.IsActionJustPressed("ui_attack"))
+            {
+                _activeWeapon.Visible = true;
+                crossbow.Fire(currentMouseDirection);
+                GetTree().CreateTimer(0.2f)
+                    .Connect("timeout", new Callable(this, nameof(HideWeapon)));
+            }
+        }
+        else
+        {
+            if (Input.IsActionPressed("ui_attack"))
+            {
+                _activeWeapon.Visible = true;
+                var swordAnimation = _activeWeapon.GetNode<AnimationPlayer>("SwordAnimation");
+                if (swordAnimation != null && !swordAnimation.IsPlaying())
+                {
+                    swordAnimation.Play("sword_attack");
+                }
+            }
+            else
+            {
+                _activeWeapon.Visible = false;
+                var swordAnimation = _activeWeapon.GetNode<AnimationPlayer>("SwordAnimation");
+                if (swordAnimation != null && swordAnimation.IsPlaying())
+                {
+                    swordAnimation.Stop();
+                }
+            }
+        }
+
+        PlayerStateMachine.ProcessFrame(delta);
+    }
 
 	private void HideWeapon()
 	{

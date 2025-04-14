@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8be78hpm2jx" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_42706"]
 [ext_resource type="Texture2D" uid="uid://hkdb8r020rpy" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3_0tcod"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="5_0tcod"]
-[ext_resource type="PackedScene" path="res://Nodes/Entities/Weapons/crossbow.tscn" id="6_42706"]
+[ext_resource type="PackedScene" uid="uid://d3yh7lfihhdpn" path="res://Nodes/Entities/Weapons/crossbow.tscn" id="6_42706"]
 [ext_resource type="PackedScene" uid="uid://b8x4reovls432" path="res://Nodes/Entities/Weapons/sword.tscn" id="7_0tcod"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="7_ig8mh"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_oyse3"]

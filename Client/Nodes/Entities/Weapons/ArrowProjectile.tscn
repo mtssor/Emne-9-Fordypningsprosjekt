@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://384jl0y0qoll"]
 
-[ext_resource type="Texture2D" path="res://Assets/Arrow.png" id="1_3it5a"]
-[ext_resource type="Script" path="res://Scripts/Entities/Weapons/RangedProjectiles.cs" id="1_myts8"]
+[ext_resource type="Texture2D" uid="uid://b1p3l424gs1s3" path="res://Assets/Arrow.png" id="1_3it5a"]
+[ext_resource type="Script" uid="uid://fnab5bb3kef4" path="res://Scripts/Entities/Weapons/RangedProjectiles.cs" id="1_myts8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myts8"]
 radius = 2.0
