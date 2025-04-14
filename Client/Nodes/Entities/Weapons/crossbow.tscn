@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3yh7lfihhdpn"]
+
+[ext_resource type="Texture2D" path="res://Assets/Crossbow.png" id="1_qj1sa"]
+[ext_resource type="PackedScene" uid="uid://384jl0y0qoll" path="res://Nodes/Entities/Weapons/ArrowProjectile.tscn" id="2_2twl2"]
+[ext_resource type="Script" path="res://Scripts/Entities/Weapons/Crossbow.cs" id="2_5ydws"]
+[ext_resource type="Script" uid="uid://3u6s1fw17gk2" path="res://Scripts/Combat/WeaponHitContext.cs" id="2_qj1sa"]
+[ext_resource type="Script" uid="uid://dr5g4qexhlepi" path="res://Scripts/Components/HitboxComponent.cs" id="4_2twl2"]
+
+[node name="Crossbow" type="Area2D"]
+script = ExtResource("2_5ydws")
+ProjectileScene = ExtResource("2_2twl2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(4.17233e-07, 0)
+rotation = 0.785398
+texture = ExtResource("1_qj1sa")
+script = ExtResource("2_qj1sa")
+
+[node name="HitboxComponent" type="Area2D" parent="Sprite2D"]
+script = ExtResource("4_2twl2")
+metadata/_custom_type_script = "uid://dr5g4qexhlepi"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://384jl0y0qoll"]
+
+[ext_resource type="Texture2D" path="res://Assets/Arrow.png" id="1_3it5a"]
+[ext_resource type="Script" path="res://Scripts/Entities/Weapons/RangedProjectiles.cs" id="1_myts8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myts8"]
+radius = 2.0
+height = 17.8
+
+[node name="ArrowProjectile" type="Area2D"]
+z_index = 1
+script = ExtResource("1_myts8")
+Speed = 600.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+rotation = -0.785398
+texture = ExtResource("1_3it5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_myts8")

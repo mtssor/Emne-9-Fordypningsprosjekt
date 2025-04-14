@@ -1,14 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://c0y5i5tlxl5sy"]
+[gd_scene load_steps=28 format=3 uid="uid://c0y5i5tlxl5sy"]
 
 [ext_resource type="Script" uid="uid://cm5tdgl7fdf8x" path="res://Scripts/Entities/Player/Player.cs" id="1_26xe5"]
 [ext_resource type="Texture2D" uid="uid://ds8be78hpm2jx" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_42706"]
 [ext_resource type="Texture2D" uid="uid://hkdb8r020rpy" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3_0tcod"]
-[ext_resource type="Script" uid="uid://dmgjmxvxjqwa" path="res://Scripts/Entities/Weapons/Weapon.cs" id="4_6m5lc"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="5_0tcod"]
+[ext_resource type="PackedScene" path="res://Nodes/Entities/Weapons/crossbow.tscn" id="6_42706"]
+[ext_resource type="PackedScene" uid="uid://b8x4reovls432" path="res://Nodes/Entities/Weapons/sword.tscn" id="7_0tcod"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="7_ig8mh"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_oyse3"]
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="9_jqtth"]
-[ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="9_oyse3"]
 [ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Scripts/Entities/Player/Components/PlayerMoveComponent.cs" id="10_6m5lc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bh11"]
@@ -111,88 +111,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyse3"]
-radius = 3.8637
-height = 14.0
-
 [sub_resource type="Animation" id="Animation_42706"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon/Sword:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Weapon/Sword:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Weapon/Sword/Area2D/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_6m5lc"]
 resource_name = "sword"
 length = 0.333337
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon/Sword:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.523599, -2.0944]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Weapon/Sword:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Weapon/Sword/Area2D/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0tcod"]
 _data = {
@@ -220,22 +144,13 @@ animation = &"Move"
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="Sword" type="Sprite2D" parent="Weapon"]
+[node name="Crossbow" parent="Weapon" instance=ExtResource("6_42706")]
 visible = false
-texture = ExtResource("9_oyse3")
-centered = false
-flip_v = true
+position = Vector2(1, 1)
+script = null
 
-[node name="Area2D" type="Area2D" parent="Weapon/Sword"]
-collision_layer = 16
-collision_mask = 4
-script = ExtResource("4_6m5lc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Sword/Area2D"]
-position = Vector2(9.19239, 9.19239)
-rotation = -0.785398
-shape = SubResource("CapsuleShape2D_oyse3")
-disabled = true
+[node name="Sword" parent="Weapon" instance=ExtResource("7_0tcod")]
+visible = false
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
