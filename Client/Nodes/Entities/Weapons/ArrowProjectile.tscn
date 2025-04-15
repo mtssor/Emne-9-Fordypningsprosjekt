@@ -4,19 +4,22 @@
 [ext_resource type="Script" uid="uid://fnab5bb3kef4" path="res://Scripts/Entities/Weapons/RangedProjectiles.cs" id="1_myts8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myts8"]
+resource_local_to_scene = true
 radius = 2.0
 height = 17.8
 
 [node name="ArrowProjectile" type="Area2D"]
 z_index = 1
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_myts8")
 Speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_myts8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 rotation = -0.785398
 texture = ExtResource("1_3it5a")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_myts8")

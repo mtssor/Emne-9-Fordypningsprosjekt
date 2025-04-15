@@ -5,9 +5,9 @@ namespace NewGameProject.Scripts.Entities.Weapons;
 
 public partial class RangedWeapon : Area2D
 {
-    [Export] PackedScene ProjectileScene { get; set; }
-    [Export] public float ProjectileSpeed { get; set; } = 400f;
-    [Export] public float Cooldown { get; set; } = 0.5f;
+    [Export] public PackedScene ProjectileScene;
+    [Export] public float ProjectileSpeed = 400f;
+    [Export] public float Cooldown = 0.5f;
     
     protected bool _canFire = true;
 

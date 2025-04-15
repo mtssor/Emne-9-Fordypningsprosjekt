@@ -34,4 +34,13 @@ public partial class ArrowProjectile : Area2D
     {
         Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
     }
+
+    public void Launch(Vector2 initialPosition, Vector2 direction, float speed)
+    {
+        GlobalPosition = initialPosition;
+        Direction = direction.Normalized();
+        Speed = speed;
+        Rotation = direction.Angle();
+        GD.Print("Arrow launched. Position: " + GlobalPosition + ", Direction: " + Direction);
+    }
 }

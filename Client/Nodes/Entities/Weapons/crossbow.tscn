@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dr5g4qexhlepi" path="res://Scripts/Components/HitboxComponent.cs" id="4_2twl2"]
 
 [node name="Crossbow" type="Area2D"]
+z_index = 1
 script = ExtResource("2_5ydws")
 ProjectileScene = ExtResource("2_2twl2")
 

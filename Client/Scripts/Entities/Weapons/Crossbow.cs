@@ -4,25 +4,26 @@ namespace NewGameProject.Scripts.Entities.Weapons;
 
 public partial class Crossbow : RangedWeapon
 {
-    [Export] public PackedScene ArrowProjectileSecene { get; set; }
+    public override void _Ready()
+    {
+        base._Ready();
+    }
 
     public override void Fire(Vector2 direction)
     {
+        GD.Print("Crossbow is firing, direction: " + direction);
+        
         if (!_canFire)
             return;
 
-        if (ArrowProjectileSecene == null)
+        if (ProjectileScene == null)
         {
-            GD.PrintErr("ArrowProjectileSecene is not set in Crossbow");
+            GD.PrintErr("ProjectileScene is not set in RangedWeapon");
             return;
         }
 
-        var arrow = (ArrowProjectile)ArrowProjectileSecene.Instantiate();
-        arrow.GlobalPosition = GlobalPosition;
-        arrow.Direction = direction.Normalized();
-        arrow.Rotation = direction.Angle();
-        arrow.Speed = ProjectileSpeed;
-        
+        var arrow = (ArrowProjectile)ProjectileScene.Instantiate();
+        arrow.Launch(GlobalPosition, direction, ProjectileSpeed);
         GetTree().CurrentScene.AddChild(arrow);
         
         _canFire = false;
