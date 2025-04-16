@@ -145,6 +145,7 @@ animation = &"Move"
 [node name="Weapon" type="Node2D" parent="."]
 
 [node name="Crossbow" parent="Weapon" instance=ExtResource("4_6m5lc")]
+visible = false
 
 [node name="Sword" parent="Weapon" instance=ExtResource("7_0tcod")]
 visible = false
