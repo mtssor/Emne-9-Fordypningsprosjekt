@@ -2,31 +2,40 @@ using Godot;
 
 namespace NewGameProject.Scripts.Entities.Weapons;
 
-public partial class Crossbow : RangedWeapon
+public partial class Crossbow : Node2D
 {
-    public override void _Ready()
+    [Export] public PackedScene ArrowScene;
+    [Export] public float FireCooldown = 0.5f;
+
+    private double _lastShotTime;
+
+    public override void _Process(double delta)
     {
-        base._Ready();
+        if (!Visible)
+            return;
+        
+        if (Input.IsActionPressed("ui_attack") && Time.GetTicksMsec() / 1000.0 - _lastShotTime >= FireCooldown)
+        {
+            Shoot();
+            _lastShotTime = Time.GetTicksMsec() / 1000.0;
+        }
     }
 
-    public override void Fire(Vector2 direction)
+    private void Shoot()
     {
-        GD.Print("Crossbow is firing, direction: " + direction);
-        
-        if (!_canFire)
+        if (ArrowScene == null)
             return;
+        
+        var arrow = ArrowScene.Instantiate() as Node2D;
+        GetParent().AddChild(arrow);
+        arrow.GlobalPosition = GlobalPosition;
+        arrow.Rotation = Rotation;
 
-        if (ProjectileScene == null)
+        if (arrow is Arrow arrowScript)
         {
-            GD.PrintErr("ProjectileScene is not set in RangedWeapon");
-            return;
+            arrowScript.Direction = GlobalTransform.X.Normalized();
         }
-
-        var arrow = (ArrowProjectile)ProjectileScene.Instantiate();
-        arrow.Launch(GlobalPosition, direction, ProjectileSpeed);
-        GetTree().CurrentScene.AddChild(arrow);
         
-        _canFire = false;
-        GetTree().CreateTimer(Cooldown).Connect("timeout", new Callable(this, nameof(ResetFire)));
+        
     }
 }

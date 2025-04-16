@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8x4reovls432"]
+[gd_scene load_steps=9 format=3 uid="uid://b8x4reovls432"]
 
+[ext_resource type="Script" uid="uid://ccr7wnj8tpjya" path="res://Scripts/Entities/Weapons/Sword.cs" id="1_51ddm"]
 [ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="1_yg0xt"]
 [ext_resource type="Script" uid="uid://dr5g4qexhlepi" path="res://Scripts/Components/HitboxComponent.cs" id="2_51ddm"]
 [ext_resource type="Texture2D" uid="uid://lt4prj3m5h2e" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="2_a2b5h"]
@@ -83,6 +84,7 @@ _data = {
 }
 
 [node name="Sword" type="Node2D"]
+script = ExtResource("1_51ddm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
