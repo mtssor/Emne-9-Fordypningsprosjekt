@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_oyse3"]
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="9_jqtth"]
 [ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="9_oyse3"]
-[ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Scripts/Entities/Player/Components/PlayerMoveComponent.cs" id="10_6m5lc"]
+[ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Nodes/Systems/PlayerMoveComponent.cs" id="10_6m5lc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bh11"]
 height = 25.0
