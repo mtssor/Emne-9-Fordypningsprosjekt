@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://de4npx1licbtu"]
+
+[ext_resource type="Script" uid="uid://6h1idj7rpb3q" path="res://Scripts/Entities/Weapons/Crossbow.cs" id="1_pw7al"]
+[ext_resource type="PackedScene" uid="uid://cc2qwngfxaahi" path="res://Nodes/Entities/Weapons/Arrow.tscn" id="2_7j3jq"]
+[ext_resource type="Texture2D" uid="uid://cneh4jo7bapx5" path="res://Assets/Crossbow.png" id="3_1jfbw"]
+
+[node name="Crossbow" type="Node2D"]
+script = ExtResource("1_pw7al")
+ArrowScene = ExtResource("2_7j3jq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+texture = ExtResource("3_1jfbw")
