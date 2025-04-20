@@ -1,5 +1,5 @@
 # Systemspesifikasjon for fordypningsprosjekt
-**Versjon 1.0** | **06. April - 2025**
+**Versjon 1.0** | **2025**
 
 ## Innholdsfortegnelse
 1. [Introduksjon](#1-introduksjon)
@@ -72,13 +72,13 @@ Systemarkitekturen er hovedsakelig en stor service laget med Godot. De forskjell
     - Spiller skal ikke kunne gå gjennom vegger eller fiender
     - Når Player hitbox kommer i kontakt med en fiender eller fiende angrep så skal skade registreres 
 
-4**Map**
+4. **Map**
    - Forskjellige sammensatte rom som spilleren beveger seg rundt i
    - Fiender plassert i alle rom utenom starting rommet. 
    - Bruk av gratis tiles for å lage designet til de forskjellige elementene i rommene
    - Random generation skal brukes for å lage variasjon for hver gang en bruker starter spillet. Genereringen må ha regler slik at rom alltid blir lagd med en viss størrelse, form, fiender osv.
 
-5**Combat**
+5. **Combat**
    - Det vil være tilfeldige våpen tilgjengelig for spilleren. Sverd, crossbow, hammer osv.
    - Forskjellige animasjoner som passer våpentypen i bruk
    - Forskjellig mengder skade fra våpen avhengig av hva som gir mening for typen. For eksempel: 
