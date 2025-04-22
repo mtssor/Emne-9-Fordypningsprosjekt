@@ -11,8 +11,11 @@ script = ExtResource("1_oytil")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 598.0
+offset_top = 230.0
+offset_right = 634.0
+offset_bottom = 273.0
+scale = Vector2(2, 2)
 
 [node name="WeaponSlot1" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
