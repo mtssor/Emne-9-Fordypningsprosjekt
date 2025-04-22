@@ -3,6 +3,7 @@ using Godot;
 using NewGameProject.Scripts.Entities.Player.Components;
 using NewGameProject.Scripts.Entities.Weapons;
 using NewGameProject.Scripts.Systems.StateMachine;
+using NewGameProject.Scripts.UI;
 
 namespace NewGameProject.Scripts.Entities.Player;
 
@@ -19,6 +20,9 @@ public partial class Player : CharacterBody2D
 	private Node2D _sword;
 	private Node2D _crossbow;
 	private Node2D _activeWeapon;
+
+	[Export] private NodePath WeaponUIPath;
+	private WeaponUI _weaponUI;
 	
 	public override void _Ready()
 	{
@@ -29,13 +33,27 @@ public partial class Player : CharacterBody2D
 		_sword = GetNode<Node2D>("Weapon/Sword");
 		_crossbow = GetNode<Node2D>("Weapon/Crossbow");
 		_activeWeapon = _sword;
+
+		_weaponUI = GetNode<WeaponUI>(WeaponUIPath);
+		_weaponUI.SetActiveWeapon(1);
 		
 		
 		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 
+		if (WeaponUIPath != null)
+		{
+			_weaponUI = GetNodeOrNull<WeaponUI>(WeaponUIPath);
+			CallDeferred(nameof(InitWeaponUI));
+		}
+
 		SetActiveWeapon(_sword);
+	}
+
+	private void InitWeaponUI()
+	{
+		_weaponUI.SetActiveWeapon(1);
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -57,6 +75,11 @@ public partial class Player : CharacterBody2D
 		if (_activeWeapon != null) _activeWeapon.Visible = false;
 		_activeWeapon = newWeapon;
 		_activeWeapon.Visible = true;
+		
+		if (_activeWeapon == _sword)
+			_weaponUI.SetActiveWeapon(1);
+		else if (_activeWeapon == _crossbow)
+			_weaponUI.SetActiveWeapon(2);
 	}
 
 	public override void _PhysicsProcess(double delta)

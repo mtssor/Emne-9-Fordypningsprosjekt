@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cm5tdgl7fdf8x" path="res://Scripts/Entities/Player/Player.cs" id="1_26xe5"]
 [ext_resource type="Texture2D" uid="uid://ds8be78hpm2jx" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_42706"]
 [ext_resource type="Texture2D" uid="uid://hkdb8r020rpy" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3_0tcod"]
-[ext_resource type="PackedScene" uid="uid://de4npx1licbtu" path="res://Nodes/Entities/Weapons/Crossbow.tscn" id="4_6m5lc"]
+[ext_resource type="PackedScene" uid="uid://de4npx1licbtu" path="res://Nodes/Entities/Weapons/crossbow.tscn" id="4_6m5lc"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="5_0tcod"]
 [ext_resource type="PackedScene" uid="uid://b8x4reovls432" path="res://Nodes/Entities/Weapons/sword.tscn" id="7_0tcod"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="7_ig8mh"]
@@ -140,7 +140,8 @@ shape = SubResource("CapsuleShape2D_4bh11")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7xjlk")
-animation = &"Move"
+animation = &"Idle"
+frame_progress = 0.0187014
 
 [node name="Weapon" type="Node2D" parent="."]
 
@@ -174,3 +175,7 @@ metadata/_custom_type_script = "uid://cde3i6tvml3ry"
 
 [node name="MoveComponent" parent="." instance=ExtResource("7_oyse3")]
 script = ExtResource("10_6m5lc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.206612, 0.206612)
+limit_smoothed = true
