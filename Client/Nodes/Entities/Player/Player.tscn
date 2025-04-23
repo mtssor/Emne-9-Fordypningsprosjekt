@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0y5i5tlxl5sy"]
+[gd_scene load_steps=29 format=3 uid="uid://c0y5i5tlxl5sy"]
 
 [ext_resource type="Script" uid="uid://cm5tdgl7fdf8x" path="res://Scripts/Entities/Player/Player.cs" id="1_26xe5"]
 [ext_resource type="Texture2D" uid="uid://ds8be78hpm2jx" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_42706"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_oyse3"]
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="9_jqtth"]
 [ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Scripts/Entities/Player/Components/PlayerMoveComponent.cs" id="10_6m5lc"]
+[ext_resource type="PackedScene" uid="uid://dm4ysqcmclg6a" path="res://Nodes/Components/HealthComponent.tscn" id="11_42706"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bh11"]
 height = 25.0
@@ -141,7 +142,7 @@ shape = SubResource("CapsuleShape2D_4bh11")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7xjlk")
 animation = &"Idle"
-frame_progress = 0.89997
+frame_progress = 0.715833
 
 [node name="Weapon" type="Node2D" parent="."]
 
@@ -177,5 +178,6 @@ metadata/_custom_type_script = "uid://cde3i6tvml3ry"
 script = ExtResource("10_6m5lc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.206612, 0.206612)
 limit_smoothed = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("11_42706")]

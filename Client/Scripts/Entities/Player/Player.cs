@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using NewGameProject.Scripts.Components;
 using NewGameProject.Scripts.Entities.Player.Components;
 using NewGameProject.Scripts.Entities.Weapons;
 using NewGameProject.Scripts.Systems.StateMachine;
@@ -20,9 +21,11 @@ public partial class Player : CharacterBody2D
 	private Node2D _sword;
 	private Node2D _crossbow;
 	private Node2D _activeWeapon;
+	
 
-	[Export] private NodePath WeaponUIPath;
-	private WeaponUI _weaponUI;
+	[Export] private NodePath HUDPath;
+	private HUD _hud;
+	private HealthComponent _healthComponent;
 	
 	public override void _Ready()
 	{
@@ -33,28 +36,28 @@ public partial class Player : CharacterBody2D
 		_sword = GetNode<Node2D>("Weapon/Sword");
 		_crossbow = GetNode<Node2D>("Weapon/Crossbow");
 		_activeWeapon = _sword;
-
-		_weaponUI = GetNode<WeaponUI>(WeaponUIPath);
-		_weaponUI.SetActiveWeapon(1);
+		
+		
+		_healthComponent = GetNode<HealthComponent>("HealthComponent");
 		
 		
 		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 
-		if (WeaponUIPath != null)
+		
+
+		if (HUDPath != null)
 		{
-			_weaponUI = GetNodeOrNull<WeaponUI>(WeaponUIPath);
-			CallDeferred(nameof(InitWeaponUI));
+			_hud = GetNode<HUD>(HUDPath);
+			_hud?.ConnectHealth(_healthComponent);
 		}
 
 		SetActiveWeapon(_sword);
 	}
-
-	private void InitWeaponUI()
-	{
-		_weaponUI.SetActiveWeapon(1);
-	}
+	
+	
+	
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
@@ -76,10 +79,10 @@ public partial class Player : CharacterBody2D
 		_activeWeapon = newWeapon;
 		_activeWeapon.Visible = true;
 		
-		if (_activeWeapon == _sword)
-			_weaponUI.SetActiveWeapon(1);
+		if (_hud == null)
+			_hud.SetActiveWeapon(1);
 		else if (_activeWeapon == _crossbow)
-			_weaponUI.SetActiveWeapon(2);
+			_hud.SetActiveWeapon(2);
 	}
 
 	public override void _PhysicsProcess(double delta)
