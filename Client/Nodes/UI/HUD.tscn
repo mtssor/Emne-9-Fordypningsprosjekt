@@ -1,5 +1,38 @@
-[gd_scene format=3 uid="uid://f72ut1k5mf6p"]
+[gd_scene load_steps=2 format=3 uid="uid://f72ut1k5mf6p"]
+
+[ext_resource type="PackedScene" uid="uid://bon635ra755f4" path="res://Nodes/UI/WeaponUI.tscn" id="1_2f86j"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="MarginContainer/Overlay"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/Overlay/TopLeftContainer"]
+layout_mode = 2
+
+[node name="BottomLeftContainer" type="VBoxContainer" parent="MarginContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="WeaponUi" parent="MarginContainer/Overlay/BottomLeftContainer" instance=ExtResource("1_2f86j")]
+layout_mode = 2
