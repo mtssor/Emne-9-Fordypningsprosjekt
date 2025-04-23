@@ -27,6 +27,9 @@ public partial class WeaponUI : Control
 
     public void SetActiveWeapon(int weaponIndex)
     {
+        // debug
+        GD.Print($"SetActiveWeapon called with index {weaponIndex}");
+        
         if (_weaponIcon1 == null || _weaponIcon2 == null)
         {
             GD.PrintErr("WeaponUI: Attempt to set active weapon before icons initialized.");

@@ -76,13 +76,18 @@ public partial class Player : CharacterBody2D
 	private void SetActiveWeapon(Node2D newWeapon)
 	{
 		if (_activeWeapon != null) _activeWeapon.Visible = false;
+		
 		_activeWeapon = newWeapon;
 		_activeWeapon.Visible = true;
-		
-		if (_hud == null)
-			_hud.SetActiveWeapon(1);
-		else if (_activeWeapon == _crossbow)
-			_hud.SetActiveWeapon(2);
+
+		if (_hud != null)
+		{
+			if (_activeWeapon == _sword)
+				_hud.SetActiveWeapon(1);
+			else if (_activeWeapon == _crossbow)
+				_hud.SetActiveWeapon(2);
+		}
+			
 	}
 
 	public override void _PhysicsProcess(double delta)
