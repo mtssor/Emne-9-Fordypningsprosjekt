@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnkt57fgo4if1"
-path="res://.godot/imported/Red Run.png-1202de077353d67ef9ecba84daab7de3.ctex"
+path="res://.godot/imported/Red Run.png-d2502bd5f85c3e653a71bd23069edc25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/No Arm Ver/Red Run.png"
-dest_files=["res://.godot/imported/Red Run.png-1202de077353d67ef9ecba84daab7de3.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/No Arm Ver/Red Run.png"
+dest_files=["res://.godot/imported/Red Run.png-d2502bd5f85c3e653a71bd23069edc25.ctex"]
 
 [params]
 

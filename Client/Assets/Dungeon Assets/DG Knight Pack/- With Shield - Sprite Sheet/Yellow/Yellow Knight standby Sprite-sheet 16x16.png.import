@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qulrji5f5i7s"
-path="res://.godot/imported/Yellow Knight standby Sprite-sheet 16x16.png-892d89496598268440a811003007a85e.ctex"
+path="res://.godot/imported/Yellow Knight standby Sprite-sheet 16x16.png-157ed9d5bee26a154fa32fdc6d1f5eca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Yellow/Yellow Knight standby Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Yellow Knight standby Sprite-sheet 16x16.png-892d89496598268440a811003007a85e.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Yellow/Yellow Knight standby Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Yellow Knight standby Sprite-sheet 16x16.png-157ed9d5bee26a154fa32fdc6d1f5eca.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://txbij5f6j5vt"
-path="res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-2f073e528f7132d4bfb189eb3fcd1153.ctex"
+path="res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-03535c94f7455249e4d4ca89bc075937.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Blue/Blue Knight idle Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-2f073e528f7132d4bfb189eb3fcd1153.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Blue/Blue Knight idle Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-03535c94f7455249e4d4ca89bc075937.ctex"]
 
 [params]
 

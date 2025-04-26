@@ -26,6 +26,9 @@ public partial class Sword : Node2D
     {
         if (_animationPlayer.IsPlaying()) return;
         
+        var sound = GetNodeOrNull<AudioStreamPlayer2D>("SwordSlashSound");
+        sound?.Play();
+        
         _animationPlayer.Play("sword_attack");
     }
 

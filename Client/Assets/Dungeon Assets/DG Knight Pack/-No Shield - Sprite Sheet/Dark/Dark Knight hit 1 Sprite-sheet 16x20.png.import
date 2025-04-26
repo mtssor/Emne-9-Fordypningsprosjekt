@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o6wkcun5deab"
-path="res://.godot/imported/Dark Knight hit 1 Sprite-sheet 16x20.png-5f19d4079458062918654989e1dfe3d4.ctex"
+path="res://.godot/imported/Dark Knight hit 1 Sprite-sheet 16x20.png-fbcd8d95948291851afcd2141c388a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/-No Shield - Sprite Sheet/Dark/Dark Knight hit 1 Sprite-sheet 16x20.png"
-dest_files=["res://.godot/imported/Dark Knight hit 1 Sprite-sheet 16x20.png-5f19d4079458062918654989e1dfe3d4.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/-No Shield - Sprite Sheet/Dark/Dark Knight hit 1 Sprite-sheet 16x20.png"
+dest_files=["res://.godot/imported/Dark Knight hit 1 Sprite-sheet 16x20.png-fbcd8d95948291851afcd2141c388a85.ctex"]
 
 [params]
 

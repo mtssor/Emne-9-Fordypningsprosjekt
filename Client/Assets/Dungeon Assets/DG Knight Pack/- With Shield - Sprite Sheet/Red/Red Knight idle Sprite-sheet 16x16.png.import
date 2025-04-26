@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbqirtiwxrrgn"
-path="res://.godot/imported/Red Knight idle Sprite-sheet 16x16.png-a428da685aed87cfb364ce1ea68bfe64.ctex"
+path="res://.godot/imported/Red Knight idle Sprite-sheet 16x16.png-46e4f8c5fa1ca16faa553b02a50522e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Red/Red Knight idle Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Red Knight idle Sprite-sheet 16x16.png-a428da685aed87cfb364ce1ea68bfe64.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Red/Red Knight idle Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Red Knight idle Sprite-sheet 16x16.png-46e4f8c5fa1ca16faa553b02a50522e1.ctex"]
 
 [params]
 

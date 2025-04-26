@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e12ucfe4qlmt"
-path="res://.godot/imported/Dark Knight standby Sprite-sheet 16x16.png-ba7829705bc247140b1d9e503bff728c.ctex"
+path="res://.godot/imported/Dark Knight standby Sprite-sheet 16x16.png-f02e4f8c6efdf96e3ba394ca9259f7c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Dark/Dark Knight standby Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Dark Knight standby Sprite-sheet 16x16.png-ba7829705bc247140b1d9e503bff728c.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Dark/Dark Knight standby Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Dark Knight standby Sprite-sheet 16x16.png-f02e4f8c6efdf96e3ba394ca9259f7c7.ctex"]
 
 [params]
 

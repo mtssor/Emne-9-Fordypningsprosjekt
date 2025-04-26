@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://covn7q7uuhfh8"
-path="res://.godot/imported/Green Slime.png-db6ab22fe480a280d9493e859198b324.ctex"
+path="res://.godot/imported/Green Slime.png-22fe037223f49d200e7f0e31a6855cab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/Green Slime.png"
-dest_files=["res://.godot/imported/Green Slime.png-db6ab22fe480a280d9493e859198b324.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/Green Slime.png"
+dest_files=["res://.godot/imported/Green Slime.png-22fe037223f49d200e7f0e31a6855cab.ctex"]
 
 [params]
 

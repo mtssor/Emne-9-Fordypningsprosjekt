@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1e5wjrki2ukk"
-path="res://.godot/imported/Dark-blue Knight standby Sprite-sheet 16x16.png-79c2e6da88ebc2a19ee5a6675aa7d133.ctex"
+path="res://.godot/imported/Dark-blue Knight standby Sprite-sheet 16x16.png-a2da6d1bab2c87059dff9c643ff9b5ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Dark-Blue/Dark-blue Knight standby Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Dark-blue Knight standby Sprite-sheet 16x16.png-79c2e6da88ebc2a19ee5a6675aa7d133.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Dark-Blue/Dark-blue Knight standby Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Dark-blue Knight standby Sprite-sheet 16x16.png-a2da6d1bab2c87059dff9c643ff9b5ca.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://no4cnpqnqj3p"
-path="res://.godot/imported/Dark Knight attack 1 Sprite-sheet 32x32.png-270bec2ae434a5639f01135cc9d24d7b.ctex"
+path="res://.godot/imported/Dark Knight attack 1 Sprite-sheet 32x32.png-280f9e612c68396984fdd310f1122386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Dark/Dark Knight attack 1 Sprite-sheet 32x32.png"
-dest_files=["res://.godot/imported/Dark Knight attack 1 Sprite-sheet 32x32.png-270bec2ae434a5639f01135cc9d24d7b.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Dark/Dark Knight attack 1 Sprite-sheet 32x32.png"
+dest_files=["res://.godot/imported/Dark Knight attack 1 Sprite-sheet 32x32.png-280f9e612c68396984fdd310f1122386.ctex"]
 
 [params]
 

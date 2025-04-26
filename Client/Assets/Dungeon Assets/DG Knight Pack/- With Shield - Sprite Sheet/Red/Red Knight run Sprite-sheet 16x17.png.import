@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h65w038mwmn6"
-path="res://.godot/imported/Red Knight run Sprite-sheet 16x17.png-bfbcecae34427a938dbe6769e463b84b.ctex"
+path="res://.godot/imported/Red Knight run Sprite-sheet 16x17.png-0abe49fcaf77337e7e28f44b7548802c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Red/Red Knight run Sprite-sheet 16x17.png"
-dest_files=["res://.godot/imported/Red Knight run Sprite-sheet 16x17.png-bfbcecae34427a938dbe6769e463b84b.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Red/Red Knight run Sprite-sheet 16x17.png"
+dest_files=["res://.godot/imported/Red Knight run Sprite-sheet 16x17.png-0abe49fcaf77337e7e28f44b7548802c.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6tl534g0kau1"
-path="res://.godot/imported/Shadow.png-d8e081a29f787961c226e6002402c7da.ctex"
+path="res://.godot/imported/Shadow.png-5458870bf1086ec151f6fbebc7f4aa07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-d8e081a29f787961c226e6002402c7da.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/Shadow.png"
+dest_files=["res://.godot/imported/Shadow.png-5458870bf1086ec151f6fbebc7f4aa07.ctex"]
 
 [params]
 

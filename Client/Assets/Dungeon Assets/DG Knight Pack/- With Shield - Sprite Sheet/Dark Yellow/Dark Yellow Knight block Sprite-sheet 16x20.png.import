@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lir57a6p1fk8"
-path="res://.godot/imported/Dark Yellow Knight block Sprite-sheet 16x20.png-afdaae45db48b778c5c80340f44491f5.ctex"
+path="res://.godot/imported/Dark Yellow Knight block Sprite-sheet 16x20.png-9311e706d32cd6c0f4672f96d34e90b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Dark Yellow/Dark Yellow Knight block Sprite-sheet 16x20.png"
-dest_files=["res://.godot/imported/Dark Yellow Knight block Sprite-sheet 16x20.png-afdaae45db48b778c5c80340f44491f5.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Dark Yellow/Dark Yellow Knight block Sprite-sheet 16x20.png"
+dest_files=["res://.godot/imported/Dark Yellow Knight block Sprite-sheet 16x20.png-9311e706d32cd6c0f4672f96d34e90b3.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx780qyngy0kf"
-path="res://.godot/imported/Red Knights v1.png-4213b380a624472ee1ff858e147012cf.ctex"
+path="res://.godot/imported/Red Knights v1.png-3673b801b5b834bde0319ef4bc5d54e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/Pixel Plains Ver/Red Knights v1.png"
-dest_files=["res://.godot/imported/Red Knights v1.png-4213b380a624472ee1ff858e147012cf.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/Pixel Plains Ver/Red Knights v1.png"
+dest_files=["res://.godot/imported/Red Knights v1.png-3673b801b5b834bde0319ef4bc5d54e1.ctex"]
 
 [params]
 

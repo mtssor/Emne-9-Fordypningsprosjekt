@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfkp1q53l35i3"
-path="res://.godot/imported/Yellow Knight attack 2 Sprite-sheet 32x32.png-263940e0063fdebd12f938d2d6e4857f.ctex"
+path="res://.godot/imported/Yellow Knight attack 2 Sprite-sheet 32x32.png-026ee124ec9e53de0a639722c610f969.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/- With Shield - Sprite Sheet/Yellow/Yellow Knight attack 2 Sprite-sheet 32x32.png"
-dest_files=["res://.godot/imported/Yellow Knight attack 2 Sprite-sheet 32x32.png-263940e0063fdebd12f938d2d6e4857f.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/- With Shield - Sprite Sheet/Yellow/Yellow Knight attack 2 Sprite-sheet 32x32.png"
+dest_files=["res://.godot/imported/Yellow Knight attack 2 Sprite-sheet 32x32.png-026ee124ec9e53de0a639722c610f969.ctex"]
 
 [params]
 

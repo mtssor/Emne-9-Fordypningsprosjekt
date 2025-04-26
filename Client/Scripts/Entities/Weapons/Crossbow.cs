@@ -36,6 +36,10 @@ public partial class Crossbow : Node2D
             arrowScript.Direction = GlobalTransform.X.Normalized();
         }
         
+        var sound = GetNodeOrNull<AudioStreamPlayer2D>("CrossbowFireSound");
+        sound?.Play();
+        GD.Print("Playing weapon sound");
+
         
     }
 }

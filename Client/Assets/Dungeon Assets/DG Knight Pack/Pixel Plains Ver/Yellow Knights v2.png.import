@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3x2n1p87a7ri"
-path="res://.godot/imported/Yellow Knights v2.png-eafcbe6646e91503cfd209b4342269f8.ctex"
+path="res://.godot/imported/Yellow Knights v2.png-d4bc930524be48497a6388dbc3f7d50e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/Pixel Plains Ver/Yellow Knights v2.png"
-dest_files=["res://.godot/imported/Yellow Knights v2.png-eafcbe6646e91503cfd209b4342269f8.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/Pixel Plains Ver/Yellow Knights v2.png"
+dest_files=["res://.godot/imported/Yellow Knights v2.png-d4bc930524be48497a6388dbc3f7d50e.ctex"]
 
 [params]
 

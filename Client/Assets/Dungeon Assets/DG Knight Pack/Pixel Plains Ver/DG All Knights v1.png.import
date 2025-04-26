@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bea5fbdun8bag"
-path="res://.godot/imported/DG All Knights v1.png-a54898b433d1bf1d0cb5cdc5ad5bcf88.ctex"
+path="res://.godot/imported/DG All Knights v1.png-8ac86e9fc89750b141c84f6777bdefaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/Pixel Plains Ver/DG All Knights v1.png"
-dest_files=["res://.godot/imported/DG All Knights v1.png-a54898b433d1bf1d0cb5cdc5ad5bcf88.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/Pixel Plains Ver/DG All Knights v1.png"
+dest_files=["res://.godot/imported/DG All Knights v1.png-8ac86e9fc89750b141c84f6777bdefaf.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://begb13dsmswy8"
-path="res://.godot/imported/Dark-blue Knight set Sprite-sheet.png-388ef8fc792a740bedd68653f11ee1db.ctex"
+path="res://.godot/imported/Dark-blue Knight set Sprite-sheet.png-661a881052819adaef6ff7128f984977.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/-No Shield - Sprite Sheet/Dark-Blue/Dark-blue Knight set Sprite-sheet.png"
-dest_files=["res://.godot/imported/Dark-blue Knight set Sprite-sheet.png-388ef8fc792a740bedd68653f11ee1db.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/-No Shield - Sprite Sheet/Dark-Blue/Dark-blue Knight set Sprite-sheet.png"
+dest_files=["res://.godot/imported/Dark-blue Knight set Sprite-sheet.png-661a881052819adaef6ff7128f984977.ctex"]
 
 [params]
 

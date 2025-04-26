@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx2ws8tiign5o"
-path="res://.godot/imported/Green Knight standby Sprite-sheet 16x16.png-62c0bcbe2a1877530224a4f4120949bb.ctex"
+path="res://.godot/imported/Green Knight standby Sprite-sheet 16x16.png-e65c610a5009f8e0f303b17fc55e310c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/-No Shield - Sprite Sheet/Green/Green Knight standby Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Green Knight standby Sprite-sheet 16x16.png-62c0bcbe2a1877530224a4f4120949bb.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/-No Shield - Sprite Sheet/Green/Green Knight standby Sprite-sheet 16x16.png"
+dest_files=["res://.godot/imported/Green Knight standby Sprite-sheet 16x16.png-e65c610a5009f8e0f303b17fc55e310c.ctex"]
 
 [params]
 

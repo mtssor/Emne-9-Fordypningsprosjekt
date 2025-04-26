@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkntc3s14nmd3"
-path="res://.godot/imported/Green Knight hit 2 Sprite-sheet 16x20.png-c2031219fd252bf3a01c2c0abeeb4738.ctex"
+path="res://.godot/imported/Green Knight hit 2 Sprite-sheet 16x20.png-03163d036d44556582d9f7ad6e6cdd97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon Assets/DG Knight Expansion Pack Full Ver/-No Shield - Sprite Sheet/Green/Green Knight hit 2 Sprite-sheet 16x20.png"
-dest_files=["res://.godot/imported/Green Knight hit 2 Sprite-sheet 16x20.png-c2031219fd252bf3a01c2c0abeeb4738.ctex"]
+source_file="res://Assets/Dungeon Assets/DG Knight Pack/-No Shield - Sprite Sheet/Green/Green Knight hit 2 Sprite-sheet 16x20.png"
+dest_files=["res://.godot/imported/Green Knight hit 2 Sprite-sheet 16x20.png-03163d036d44556582d9f7ad6e6cdd97.ctex"]
 
 [params]
 

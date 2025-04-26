@@ -35,6 +35,9 @@ public partial class Staff : Node2D
         {
             boltScript.Direction = GlobalTransform.X.Normalized();
         }
+        
+        var sound = GetNodeOrNull<AudioStreamPlayer2D>("MagicSound");
+        sound?.Play();
     }
     
     
