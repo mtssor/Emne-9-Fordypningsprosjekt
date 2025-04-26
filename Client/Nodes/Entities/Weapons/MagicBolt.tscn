@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cryiomqtbpdsa"]
+
+[ext_resource type="Texture2D" uid="uid://bs7oc14ofba68" path="res://Assets/Dungeon Assets/Dungeon Gathering Full Ver. 1.1/New Items [Update]/16x16 Items Pack.png" id="1_dkdev"]
+[ext_resource type="Script" uid="uid://coohcdh84gsoc" path="res://Scripts/Entities/Weapons/MagicBolt.cs" id="1_qgkdw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgkdw"]
+radius = 5.0
+
+[node name="MagicBolt" type="Area2D"]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_qgkdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qgkdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dkdev")
+region_enabled = true
+region_rect = Rect2(128, 160, 16, 16)

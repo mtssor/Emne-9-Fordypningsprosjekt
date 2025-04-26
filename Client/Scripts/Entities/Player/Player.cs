@@ -21,6 +21,7 @@ public partial class Player : CharacterBody2D
 	private Node2D _sword;
 	private Node2D _crossbow;
 	private Node2D _activeWeapon;
+	private Node2D _staff;
 	
 
 	[Export] private NodePath HUDPath;
@@ -35,6 +36,7 @@ public partial class Player : CharacterBody2D
 
 		_sword = GetNode<Node2D>("Weapon/Sword");
 		_crossbow = GetNode<Node2D>("Weapon/Crossbow");
+		_staff = GetNode<Node2D>("Weapon/Staff");
 		_activeWeapon = _sword;
 		
 		
@@ -67,6 +69,8 @@ public partial class Player : CharacterBody2D
 				SetActiveWeapon(_sword);
 			else if (keyEvent.PhysicalKeycode == Key.Key2)
 				SetActiveWeapon(_crossbow);
+			else if (keyEvent.PhysicalKeycode == Key.Key3)
+				SetActiveWeapon((_staff));
 		}
 		
 		
@@ -86,6 +90,8 @@ public partial class Player : CharacterBody2D
 				_hud.SetActiveWeapon(1);
 			else if (_activeWeapon == _crossbow)
 				_hud.SetActiveWeapon(2);
+			else if (_activeWeapon == _staff)
+				_hud.SetActiveWeapon(3);
 		}
 			
 	}

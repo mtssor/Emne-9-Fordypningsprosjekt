@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://f72ut1k5mf6p"]
+[gd_scene load_steps=9 format=3 uid="uid://f72ut1k5mf6p"]
 
 [ext_resource type="Script" uid="uid://dlplf6i4y33cp" path="res://Scripts/UI/HUD.cs" id="1_fsrse"]
 [ext_resource type="Script" uid="uid://cw81sxsnjghd" path="res://Scripts/UI/WeaponUI.cs" id="2_w478i"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="3_h1rp0"]
 [ext_resource type="Texture2D" uid="uid://bj8ydthpu7tft" path="res://Assets/Green 128x16.png" id="4_5wmrv"]
 [ext_resource type="Texture2D" uid="uid://cneh4jo7bapx5" path="res://Assets/Crossbow.png" id="4_430px"]
+[ext_resource type="Texture2D" uid="uid://bs7oc14ofba68" path="res://Assets/Dungeon Assets/Dungeon Gathering Full Ver. 1.1/New Items [Update]/16x16 Items Pack.png" id="7_2cv2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8q5w"]
+atlas = ExtResource("7_2cv2c")
+region = Rect2(64, 96, 16, 16)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -72,3 +77,10 @@ layout_mode = 2
 [node name="WeaponIcon2" type="TextureRect" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer/WeaponSlot2"]
 layout_mode = 2
 texture = ExtResource("4_430px")
+
+[node name="WeaponSlot3" type="VBoxContainer" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponIcon3" type="TextureRect" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer/WeaponSlot3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_b8q5w")
