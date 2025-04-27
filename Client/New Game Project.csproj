@@ -4,10 +4,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>NewGameProject</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="TODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Systems\MapGeneration\" />
-  </ItemGroup>
 </Project>
