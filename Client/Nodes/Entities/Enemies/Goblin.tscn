@@ -1,84 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwkmtx0phy7oc"]
+[gd_scene load_steps=12 format=3 uid="uid://cwkmtx0phy7oc"]
 
 [ext_resource type="Script" uid="uid://y5qe7e760wxx" path="res://Scripts/Entities/Enemies/Enemy.cs" id="1_mij0t"]
-[ext_resource type="SpriteFrames" uid="uid://bo8dqxmsjj6wa" path="res://Resources/Entities/GoblinAnimations.tres" id="1_vc5s1"]
-[ext_resource type="Texture2D" uid="uid://bq4ocsq7mmhgb" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="3_j4p65"]
+[ext_resource type="SpriteFrames" uid="uid://dhn87fm8fpdw2" path="res://Resources/Entities/Enemies/GoblinAnimations.tres" id="2_mij0t"]
+[ext_resource type="SpriteFrames" uid="uid://b76hbm36fcd5t" path="res://Resources/Entities/Enemies/GoblinAnimatedEffects.tres" id="3_6g0hb"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="3_nh0y8"]
-[ext_resource type="Texture2D" uid="uid://dxifndyo7eykl" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_spritesheet.png" id="4_mij0t"]
 [ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Scripts/Systems/StateMachine/States/Idle.cs" id="4_w7j3y"]
 [ext_resource type="Script" uid="uid://cjut6gxctf25n" path="res://Scripts/Components/HealthComponent.cs" id="5_3hhqp"]
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="5_vc5s1"]
 [ext_resource type="Script" uid="uid://coy5xq8ag2qnm" path="res://Scripts/Components/HurtboxComponent.cs" id="5_w7j3y"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_6g0hb"]
-[ext_resource type="Script" uid="uid://bp0e1vn1qdbry" path="res://Scripts/Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6g0hb"]
-atlas = ExtResource("3_j4p65")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ugj40"]
-atlas = ExtResource("3_j4p65")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0khim"]
-atlas = ExtResource("3_j4p65")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_03a0k"]
-atlas = ExtResource("3_j4p65")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6agof"]
-atlas = ExtResource("4_mij0t")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhn7t"]
-atlas = ExtResource("4_mij0t")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vhp1"]
-atlas = ExtResource("4_mij0t")
-region = Rect2(16, 0, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_imr63"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6g0hb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ugj40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0khim")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_03a0k")
-}],
-"loop": false,
-"name": &"Death",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6agof")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhn7t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3vhp1")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": false,
-"name": &"Hit",
-"speed": 15.0
-}]
+[ext_resource type="Script" uid="uid://cr5xujps5ptuu" path="res://Scripts/Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh0y8"]
 radius = 5.0
@@ -91,12 +22,12 @@ collision_mask = 9
 script = ExtResource("1_mij0t")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("1_vc5s1")
-animation = &"Idle"
+sprite_frames = ExtResource("2_mij0t")
+animation = &"Move"
 
 [node name="AnimatedEffects" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.59375, 1.59375)
-sprite_frames = SubResource("SpriteFrames_imr63")
+sprite_frames = ExtResource("3_6g0hb")
 animation = &"Hit"
 flip_h = true
 
@@ -137,5 +68,5 @@ metadata/_custom_type_script = "uid://coy5xq8ag2qnm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 visibility_layer = 0
-position = Vector2(0, -2)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_nh0y8")

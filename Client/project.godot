@@ -27,6 +27,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="New Game Project"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gaea/plugin.cfg")
+
 [input]
 
 ui_left={
