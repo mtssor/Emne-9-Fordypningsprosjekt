@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmdnprvwrxg43" path="res://Scripts/Game.cs" id="1_g5j3c"]
 [ext_resource type="PackedScene" uid="uid://c0y5i5tlxl5sy" path="res://Nodes/Entities/Player/Player.tscn" id="2_6hfer"]
-[ext_resource type="PackedScene" uid="uid://cwkmtx0phy7oc" path="res://Nodes/Entities/Enemies/Goblin.tscn" id="3_1sokt"]
+[ext_resource type="PackedScene" uid="uid://cwkmtx0phy7oc" path="res://Nodes/Entities/Enemies/Zombie.tscn" id="3_1sokt"]
 [ext_resource type="PackedScene" uid="uid://f72ut1k5mf6p" path="res://Nodes/UI/HUD.tscn" id="4_wi60h"]
 
 [node name="Game" type="Node2D"]
@@ -13,11 +13,8 @@ script = ExtResource("1_g5j3c")
 scale = Vector2(4.84, 4.84)
 HUDPath = NodePath("../UI/MainHUD/Hud")
 
-[node name="Goblin" parent="." instance=ExtResource("3_1sokt")]
-position = Vector2(-115, -75)
-scale = Vector2(3.48, 3.48)
-collision_layer = 4
-collision_mask = 33
+[node name="Zombie" parent="." instance=ExtResource("3_1sokt")]
+position = Vector2(131, -60)
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 0

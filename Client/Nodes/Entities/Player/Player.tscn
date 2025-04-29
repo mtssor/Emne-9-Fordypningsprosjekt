@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dm4ysqcmclg6a" path="res://Nodes/Components/HealthComponent.tscn" id="11_42706"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bh11"]
-height = 25.0
+height = 405.26
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig8mh"]
 atlas = ExtResource("2_42706")
@@ -144,7 +144,8 @@ shape = SubResource("CapsuleShape2D_4bh11")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7xjlk")
 animation = &"Idle"
-frame_progress = 0.16932
+frame = 5
+frame_progress = 0.113215
 
 [node name="Weapon" type="Node2D" parent="."]
 

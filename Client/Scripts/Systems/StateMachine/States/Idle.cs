@@ -11,6 +11,7 @@ public partial class Idle : State
     {
         base.Enter();
         Parent.Velocity = Vector2.Zero;
+        Animations.Play("Idle");
     }
 
     public override State ProcessInput(InputEvent @event)

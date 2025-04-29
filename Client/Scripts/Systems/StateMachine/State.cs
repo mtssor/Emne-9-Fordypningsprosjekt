@@ -11,7 +11,7 @@ public partial class State : Node
     public CharacterBody2D Parent;
     public IMoveComponent MoveComponent;
 
-    public void Enter()
+    public virtual void Enter()
     {
         Animations.Play(AnimationName);
     }

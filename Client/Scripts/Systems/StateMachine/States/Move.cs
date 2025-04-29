@@ -7,6 +7,12 @@ public partial class Move : State
 {
     [Export] public State IdleState;
     [Export] public float MoveSpeed { get; set; } = 200f;
+
+    public override void Enter()
+    {
+        base.Enter();
+        Animations.Play("Move");
+    }
     
     public override State ProcessPhysics(double deltaTime)
     {
@@ -16,20 +22,11 @@ public partial class Move : State
             return IdleState;
         
         Vector2 velocity = direction * MoveSpeed;
-
-        switch (velocity.X)
-        {
-            case < 0 when !Animations.FlipH:
-            case > 0 when Animations.FlipH:
-                Animations.SpeedScale = -1;
-                break;
-            default:
-                Animations.SpeedScale = 1;
-                break;
-        }
-        
         Parent.Velocity = velocity;
         Parent.MoveAndSlide();
+        
+        if (velocity.X != 0)
+            Animations.FlipH = velocity.X < 0;
 
         return null;
     }
