@@ -14,9 +14,6 @@
 [ext_resource type="Script" uid="uid://c4q7rc8wc8m0o" path="res://Scripts/Entities/Player/Components/PlayerMoveComponent.cs" id="10_6m5lc"]
 [ext_resource type="PackedScene" uid="uid://dm4ysqcmclg6a" path="res://Nodes/Components/HealthComponent.tscn" id="11_42706"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bh11"]
-height = 405.26
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig8mh"]
 atlas = ExtResource("2_42706")
 region = Rect2(0, 0, 16, 16)
@@ -114,6 +111,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ig8mh"]
+radius = 5.0
+height = 14.0
+
 [sub_resource type="Animation" id="Animation_42706"]
 length = 0.001
 
@@ -134,18 +135,14 @@ collision_mask = 33
 motion_mode = 1
 script = ExtResource("1_26xe5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 0
-visibility_layer = 0
-position = Vector2(1, 1)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("CapsuleShape2D_4bh11")
-
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7xjlk")
 animation = &"Idle"
 frame = 5
 frame_progress = 0.113215
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ig8mh")
 
 [node name="Weapon" type="Node2D" parent="."]
 

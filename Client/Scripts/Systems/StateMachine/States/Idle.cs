@@ -14,10 +14,10 @@ public partial class Idle : State
         Animations.Play("Idle");
     }
 
-    public override State ProcessInput(InputEvent @event)
+    public override State ProcessPhysics(double delta)
     {
-        return MoveComponent.GetMovementDirection() != Vector2.Zero 
-            ? MoveState 
+        return MoveComponent.GetMovementDirection() != Vector2.Zero
+            ? MoveState
             : null;
     }
 }

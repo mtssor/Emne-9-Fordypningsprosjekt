@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cwkmtx0phy7oc"]
+[gd_scene load_steps=40 format=3 uid="uid://cwkmtx0phy7oc"]
 
 [ext_resource type="Script" uid="uid://bxro8r07j7ays" path="res://Scripts/Entities/Enemies/Monsters/Zombie.cs" id="1_ixd7x"]
 [ext_resource type="Texture2D" uid="uid://dlw2w52f0vpv5" path="res://Assets/Dungeon Assets/DG-Monsters-Expansion/Zombies Pack/Zombie Idle-Sheet 1 16x16.png" id="2_1pdti"]
@@ -206,9 +206,13 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh0y8"]
-radius = 6.0
-height = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixd7x"]
+radius = 30.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r651h"]
+radius = 30.0
+height = 80.0
 
 [node name="Zombie" type="CharacterBody2D"]
 z_index = 1
@@ -230,8 +234,7 @@ animation = &"Hit"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 0
-shape = SubResource("CapsuleShape2D_nh0y8")
+shape = SubResource("CapsuleShape2D_ixd7x")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StartingState")]
 script = ExtResource("3_nh0y8")
@@ -265,6 +268,4 @@ script = ExtResource("5_w7j3y")
 metadata/_custom_type_script = "uid://coy5xq8ag2qnm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
-visibility_layer = 0
-position = Vector2(0, -2)
-shape = SubResource("CapsuleShape2D_nh0y8")
+shape = SubResource("CapsuleShape2D_r651h")
