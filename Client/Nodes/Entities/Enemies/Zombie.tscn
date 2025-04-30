@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cwkmtx0phy7oc"]
+[gd_scene load_steps=42 format=3 uid="uid://cwkmtx0phy7oc"]
 
 [ext_resource type="Script" uid="uid://bxro8r07j7ays" path="res://Scripts/Entities/Enemies/Monsters/Zombie.cs" id="1_ixd7x"]
 [ext_resource type="Texture2D" uid="uid://dlw2w52f0vpv5" path="res://Assets/Dungeon Assets/DG-Monsters-Expansion/Zombies Pack/Zombie Idle-Sheet 1 16x16.png" id="2_1pdti"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://coy5xq8ag2qnm" path="res://Scripts/Components/HurtboxComponent.cs" id="5_w7j3y"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_6g0hb"]
 [ext_resource type="Script" uid="uid://cr5xujps5ptuu" path="res://Scripts/Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
+[ext_resource type="Script" uid="uid://b7eby1olwl2i8" path="res://Scripts/Entities/Enemies/Monsters/Monster Attacks/ZombieAttack.cs" id="13_r651h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixd7x"]
 atlas = ExtResource("2_1pdti")
@@ -214,6 +215,10 @@ height = 80.0
 radius = 30.0
 height = 80.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dg3xm"]
+radius = 30.0
+height = 80.0
+
 [node name="Zombie" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1
 collision_layer = 32
@@ -255,6 +260,7 @@ metadata/_custom_type_script = "uid://cde3i6tvml3ry"
 
 [node name="MoveComponent" parent="." instance=ExtResource("7_6g0hb")]
 script = ExtResource("8_ugj40")
+ChaseRadius = 1000.0
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_3hhqp")
@@ -269,3 +275,11 @@ metadata/_custom_type_script = "uid://coy5xq8ag2qnm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CapsuleShape2D_r651h")
+
+[node name="AttackZone" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 40
+script = ExtResource("13_r651h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+shape = SubResource("CapsuleShape2D_dg3xm")
