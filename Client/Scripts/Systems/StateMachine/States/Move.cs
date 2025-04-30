@@ -6,7 +6,7 @@ namespace NewGameProject.Scripts.Systems.StateMachine.States;
 public partial class Move : State
 {
     [Export] public State IdleState;
-    [Export] public float MoveSpeed { get; set; } = 200f;
+    
 
     public override void Enter()
     {
@@ -21,7 +21,7 @@ public partial class Move : State
         if (direction == Vector2.Zero)
             return IdleState;
         
-        Vector2 velocity = direction * MoveSpeed;
+        Vector2 velocity = direction * MoveComponent.MoveSpeed;
         Parent.Velocity = velocity;
         Parent.MoveAndSlide();
         

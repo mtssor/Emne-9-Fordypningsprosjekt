@@ -9,27 +9,23 @@ public partial class Game : Node2D
 {
     public override void _Ready()
     {
-        var zombie = GetNode<Zombie>("Zombie");
-        var player = GetNode<Player>("Player");
-        
-
-        if (zombie != null)
+        var player = GetNodeOrNull<Player>("Player");
+        if (player == null)
         {
-            var moveComponent = zombie.GetNodeOrNull<EnemyMoveComponent>("MoveComponent");
-
-            if (moveComponent != null)
-            {
-                moveComponent.SetTarget(player);
-                GD.Print("Assigned player to zombie");
-            }
-            else
-            {
-                GD.Print("MoveComponent not found on Zombie");
-            }
+            GD.PrintErr("Player not found");
+            return;
         }
-        else
+
+        foreach (var enemyNode in GetTree().GetNodesInGroup("enemies"))
         {
-            GD.Print("Zombie node not found");
+            if (enemyNode is Node zombie)
+            {
+                var moveComponent = zombie.GetNodeOrNull<EnemyMoveComponent>("MoveComponent");
+                moveComponent?.SetTarget(player);
+                
+                GD.Print("Assigned player to enemy");
+            }
         }
     }
+
 }
