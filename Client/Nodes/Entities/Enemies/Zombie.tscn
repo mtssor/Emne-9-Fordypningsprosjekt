@@ -216,8 +216,8 @@ radius = 30.0
 height = 80.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dg3xm"]
-radius = 30.0
-height = 80.0
+radius = 33.0
+height = 83.0
 
 [node name="Zombie" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1

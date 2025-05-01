@@ -14,7 +14,7 @@ scale = Vector2(4.84, 4.84)
 HUDPath = NodePath("../UI/MainHUD/Hud")
 
 [node name="Zombie" parent="." instance=ExtResource("3_1sokt")]
-position = Vector2(-111, -67)
+position = Vector2(-84, -203)
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 0

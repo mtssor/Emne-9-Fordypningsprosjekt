@@ -27,10 +27,16 @@ public partial class Player : CharacterBody2D
 	[Export] private NodePath HUDPath;
 	private HUD _hud;
 	private HealthComponent _healthComponent;
+	private AnimatedSprite2D _animatedEffects;
+	
+	private bool _isDead = false;
 	
 	public override void _Ready()
 	{
 		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");
+		_animatedEffects = GetNode<AnimatedSprite2D>("AnimatedEffects");
+		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
+		
 		PlayerStateMachine = GetNode<StateMachine>("StateMachine");
 		PlayerMoveComponent = GetNode<PlayerMoveComponent>("MoveComponent");
 
@@ -41,9 +47,10 @@ public partial class Player : CharacterBody2D
 		
 		
 		_healthComponent = GetNode<HealthComponent>("HealthComponent");
+		_healthComponent.Died += OnPlayerDied;
 		
 		
-		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
+		
 
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 
@@ -98,6 +105,9 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_isDead)
+			return;
+		
 		PlayerStateMachine.ProcessPhysics(delta);
 	}
 
@@ -121,6 +131,38 @@ public partial class Player : CharacterBody2D
 		}
 
 		PlayerStateMachine.ProcessFrame(delta);
+	}
+
+	private void OnPlayerDied()
+	{
+		GD.Print("Player has died");
+		_isDead = true;
+		
+		Velocity = Vector2.Zero;
+		
+		var timer = new Timer();
+		AddChild(timer);
+		timer.WaitTime = 0.5;
+		timer.OneShot = true;
+		timer.Timeout += () =>
+		{
+			GD.Print("Restarting scene");
+			GetTree().ReloadCurrentScene();
+		};
+		
+		timer.Start();
+
+		//PlayerAnimations.Visible = false;
+
+		//_sword.Visible = false;
+		//_crossbow.Visible = false;
+		//_staff.Visible = false;
+	}
+
+	private void OnDeathAnimationFinished()
+	{
+		GD.Print("Restarting scene");
+		GetTree().ReloadCurrentScene();
 	}
 
 	
