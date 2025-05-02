@@ -8,7 +8,7 @@ namespace NewGameProject.Scripts.Entities.Weapons;
 public partial class MagicBolt : Area2D
 {
     [Export] public float Speed = 150;
-    [Export] public float Damage = 8f;
+    [Export] public float Damage = 4f;
     [Export] public float ExplosionRadius = 50f;
     [Export] public float KnockBackForce = 40f;
     [Export] public float StunDuration = 1.0f;
@@ -29,7 +29,19 @@ public partial class MagicBolt : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        Explode();
+        if (area is HurtboxComponent hurtbox)
+        {
+            Attack attack = new()
+            {
+                Damage = Damage,
+                KnockbackForce = KnockBackForce,
+                Position = GlobalPosition,
+                StunDuration = StunDuration,
+            };
+            
+            hurtbox.HandleWeaponCollision(attack);
+        }
+        
         QueueFree();
     }
 
@@ -40,7 +52,7 @@ public partial class MagicBolt : Area2D
         {
             Position = GlobalPosition,
             CollideWithAreas = true,
-            CollisionMask = 1
+            CollisionMask = 3
         };
         
         var results = spaceState.IntersectPoint(query, 32);

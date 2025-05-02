@@ -35,15 +35,19 @@ public partial class Sword : Node2D
     public void EnableHitbox()
     {
         _hitbox.Monitoring = true;
+        GD.Print("Sword hitbox enabled");
     }
 
     public void DisableHitbox()
     {
         _hitbox.Monitoring = false;
+        GD.Print("Sword hitbox disabled");
     }
 
     private void OnAreaEntered(Area2D area)
     {
+        GD.Print("Sword hit something: ", area.Name);
+        
         if (area is HurtboxComponent hurtbox)
         {
             Attack attack = new()

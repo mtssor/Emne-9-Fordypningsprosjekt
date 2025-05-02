@@ -62,7 +62,13 @@ public partial class HealthComponent : Node
     private void InitializeHealth() => CurrentHealth = MaxHealth;
     
     public void SetMaxHealth(float newMaxHealth) => MaxHealth = newMaxHealth;
-    public void Damage(float damage) => CurrentHealth -= damage;
+
+    public void Damage(float damage)
+    {
+        GD.Print($"Health -> Current: {_currentHealth}, Loss: {damage} ");
+        CurrentHealth -= damage;
+    }
+    
     public void Heal(float heal) => Damage(-heal);
 }
 

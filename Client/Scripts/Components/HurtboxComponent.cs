@@ -30,6 +30,8 @@ public partial class HurtboxComponent : Area2D
 
     public void HandleWeaponCollision(Attack attack)
     {
+        GD.Print($"Hurtbox: Enemy took {attack.Damage} damage");
+        
         _healthComponent?.Damage(attack.Damage);
         if (_healthComponent is { HasHealthRemaining: true })
             _animatedEffects.Play("Hit");
@@ -37,6 +39,7 @@ public partial class HurtboxComponent : Area2D
     
     private void OnDeath()
     {
+        GD.Print("Enemy died");
         _animations.Visible = false;
         _animatedEffects.Play("Death");
         _animatedEffects.AnimationFinished += () => Owner.QueueFree();

@@ -7,7 +7,7 @@ namespace NewGameProject.Scripts.Entities.Weapons;
 public partial class Arrow : Area2D
 {
     [Export] public float Speed = 400f;
-    [Export] public float Damage = 5f;
+    [Export] public float Damage = 2f;
     [Export] public float StickTime = 0.2f;
     [Export] public float KnockbackForce = 50f;
     
