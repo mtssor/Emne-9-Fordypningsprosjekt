@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8x4reovls432"]
+[gd_scene load_steps=9 format=3 uid="uid://b8x4reovls432"]
 
 [ext_resource type="Script" uid="uid://ccr7wnj8tpjya" path="res://Scripts/Entities/Weapons/Sword.cs" id="1_51ddm"]
 [ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="1_yg0xt"]
-[ext_resource type="Script" uid="uid://dr5g4qexhlepi" path="res://Scripts/Components/HitboxComponent.cs" id="2_51ddm"]
 [ext_resource type="Texture2D" uid="uid://lt4prj3m5h2e" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="2_a2b5h"]
 [ext_resource type="AudioStream" uid="uid://bj8geaxen1cgf" path="res://Assets/Sound/Knife attack slash.wav" id="5_n11fj"]
 
@@ -90,7 +89,6 @@ offset = Vector2(6, -6)
 position = Vector2(7.77818, -7.77818)
 collision_layer = 16
 collision_mask = 4
-script = ExtResource("2_51ddm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(1.19209e-07, -1.19209e-07)
@@ -110,5 +108,3 @@ libraries = {
 
 [node name="SwordSlashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_n11fj")
-
-[connection signal="AreaEntered" from="Sprite2D/Hitbox" to="." method="_on_hitbox_area_entered"]
