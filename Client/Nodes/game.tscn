@@ -11,6 +11,7 @@ script = ExtResource("1_g5j3c")
 [node name="Rooms" type="Node2D" parent="."]
 z_index = 1
 script = ExtResource("2_1sokt")
+NumberOfLevels = 10
 
 [node name="Player" parent="." instance=ExtResource("2_6hfer")]
 platform_floor_layers = 4278190081

@@ -255,11 +255,12 @@ physics_material_override = SubResource("PhysicsMaterial_6akgl")
 script = ExtResource("1_26nwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_tiipj")
 animation = &"Open"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_moian")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -269,5 +270,5 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 0
-position = Vector2(0, 8)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_6akgl")

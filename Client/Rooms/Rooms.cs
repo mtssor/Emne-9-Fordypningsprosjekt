@@ -8,13 +8,7 @@ namespace NewGameProject.Rooms;
 [GlobalClass]
 public partial class Rooms : Node2D
 {
-    private Random _random;
-    [Export] public int NumberOfLevels = 5;
-    public CharacterBody2D Player { get; set; }
-
-    private bool _specialRoomSpawned;
-    public Node2D PreviousRoom { get; set; }
-
+#region RoomScenes
     private static readonly PackedScene[] StartRooms = [
         GD.Load<PackedScene>("res://Rooms/SpawnRooms/Prison.tscn")
     ];
@@ -29,17 +23,29 @@ public partial class Rooms : Node2D
     public static readonly PackedScene[] SpecialRooms = [ 
         ResourceLoader.Load<PackedScene>("res://Rooms/SpecialRooms/Treasure_01.tscn")
     ];
+
     public static readonly PackedScene[] EndRooms = [
         ResourceLoader.Load<PackedScene>("res://Rooms/EndRooms/EndRoom_01.tscn")
     ];
+
     private static readonly PackedScene[] BossRoom = [
         ResourceLoader.Load<PackedScene>("res://Rooms/BossRooms/BossRoom.tscn")
     ];
+#endregion
+    
+    private Random _random;
+    [Export] public int NumberOfLevels = 5;
+    public CharacterBody2D Player { get; set; }
 
-    public const int TileSize = 16;
-    public const int TerrainSetIndex = 0;
-    public const int FloorTerrainIndex = 0;
-    public const int WallTerrainIndex = 1;
+    private bool _specialRoomSpawned;
+    public Node2D PreviousRoom { get; set; }
+
+    private const int TileSize = 16;
+    private const int FloorTileSourceId = 3;
+    private const int WallTileSourceId = 2;
+    private static readonly Vector2I WallTileAtlas = new(0, 9);
+    private static readonly Vector2I RightFloorTileAtlas = new(11, 4);
+    private static readonly Vector2I LeftFloorTileAtlas = new(13, 4);
 
 
     public override void _Ready()
@@ -104,38 +110,20 @@ public partial class Rooms : Node2D
         
         StaticBody2D previousDoor = PreviousRoom.GetNode<StaticBody2D>("Doors/Door");
         TileMapLayer previousLayer = PreviousRoom.GetNode<TileMapLayer>("Floor&Walls");
-
         
-#region CorridorGeneration
         
+    #region CorridorGeneration
         Vector2I exitPosition = previousLayer.LocalToMap(previousDoor.Position) + Vector2I.Up * 2;
         uint corridorHeight = GD.Randi() % 5 + 2;
-
-        Array<Vector2I> wallCells = [];
-        Array<Vector2I> floorCells = [];
         for (int y = 0; y < corridorHeight; y++)
         {
-            previousLayer.SetCell(exitPosition + new Vector2I(-2, -y), 2,  new Vector2I(0, 9));
-            previousLayer.SetCell(exitPosition + new Vector2I(-1, -y), 3,  new Vector2I(14, 2));
-            previousLayer.SetCell(exitPosition + new Vector2I(0, -y), 3,  new Vector2I(14, 2));
-            previousLayer.SetCell(exitPosition + new Vector2I(1, -y), 2,  new Vector2I(0, 9));
-            
-            // wallCells.Add(exitPosition + new Vector2I(-2, -y));
-            // floorCells.Add(exitPosition + new Vector2I(-1, -y));
-            // floorCells.Add(exitPosition + new Vector2I(0, -y));
-            // wallCells.Add(exitPosition + new Vector2I(1, -y));
+            previousLayer.SetCell(exitPosition + new Vector2I(-2, -y), WallTileSourceId,  WallTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(-1, -y), FloorTileSourceId,  RightFloorTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(0, -y), FloorTileSourceId,  LeftFloorTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(1, -y), WallTileSourceId,  WallTileAtlas);
         }
-
-        // previousLayer.SetCellsTerrainConnect(
-        //     floorCells,
-        //     TerrainSetIndex,
-        //     FloorTerrainIndex);
-        //
-        // previousLayer.SetCellsTerrainConnect(
-        //     wallCells,
-        //     TerrainSetIndex,
-        //     WallTerrainIndex);
-#endregion
+    #endregion
+        
         
         TileMapLayer tileMapLayer = room.GetNode<TileMapLayer>("Floor&Walls");
         Marker2D marker = room.GetNode<Marker2D>("Entrance/Marker2D");
@@ -145,7 +133,7 @@ public partial class Rooms : Node2D
 
         room.Position = previousDoor.GlobalPosition
                         + Vector2I.Up * offsetY * TileSize
-                        + Vector2.Up * (1 + corridorHeight) * TileSize
+                        + Vector2.Up * (corridorHeight) * TileSize
                         + Vector2.Left * entranceX * TileSize;
     }
 }
