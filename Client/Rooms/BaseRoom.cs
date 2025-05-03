@@ -11,7 +11,7 @@ public partial class BaseRoom : Node2D
     [Export] private bool _bossRoom;
     private Random _random;
 
-    public Dictionary<string, PackedScene> Enemies = new()
+    private readonly Dictionary<string, PackedScene> _enemiesToSpawn = new()
     {
         ["Goblin"] = ResourceLoader.Load<PackedScene>("res://Nodes/Entities/Enemies/Goblin.tscn"),
     };
@@ -78,8 +78,8 @@ public partial class BaseRoom : Node2D
                     // enemy = EnemyScenes.SomeBoss.Instantiate<CharacterBody2D>()
                     _numberOfEnemies = 15;
                     break;
-                case false when _random.Next(Enemies.Count) == 0:
-                    enemy = Enemies["Goblin"].Instantiate<CharacterBody2D>();
+                case false when _random.Next(_enemiesToSpawn.Count) == 0:
+                    enemy = _enemiesToSpawn["Goblin"].Instantiate<CharacterBody2D>();
                     break;
                 default:
                     //enemy = Enemies["Goblin"].Instantiate<CharacterBody2D>();
