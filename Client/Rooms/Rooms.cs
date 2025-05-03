@@ -61,9 +61,9 @@ public partial class Rooms : Node2D
         for (int level = 0; level < NumberOfLevels; level++)
         {
             Node2D room = CreateRoom(level);
-            PreviousRoom = room;
             AddChild(room);
             PositionRoom(room, level);
+            PreviousRoom = room;
         }
     }
 
@@ -89,7 +89,7 @@ public partial class Rooms : Node2D
 
     private Node2D InstantiateRandom(PackedScene[] roomScenes)
     {
-        int idx = _random.Next(0, roomScenes.Length);
+        int idx = _random.Next() % roomScenes.Length;
         return roomScenes[idx].Instantiate<Node2D>();
     }
 
@@ -113,17 +113,17 @@ public partial class Rooms : Node2D
 
         Array<Vector2I> wallCells = [];
         Array<Vector2I> floorCells = [];
-        for (int y = 0; y < corridorHeight * 2; y++)
+        for (int y = 0; y < corridorHeight; y++)
         {
-            previousLayer.SetCell(exitPosition + new Vector2I(-2, -(y + 1)), 2,  new Vector2I(0, 9));
-            previousLayer.SetCell(exitPosition + new Vector2I(-1, -(y + 1)), 3,  new Vector2I(14, 2));
-            previousLayer.SetCell(exitPosition + new Vector2I(0, -(y + 1)), 3,  new Vector2I(14, 2));
-            previousLayer.SetCell(exitPosition + new Vector2I(1, -(y + 1)), 2,  new Vector2I(0, 9));
+            previousLayer.SetCell(exitPosition + new Vector2I(-2, -y), 2,  new Vector2I(0, 9));
+            previousLayer.SetCell(exitPosition + new Vector2I(-1, -y), 3,  new Vector2I(14, 2));
+            previousLayer.SetCell(exitPosition + new Vector2I(0, -y), 3,  new Vector2I(14, 2));
+            previousLayer.SetCell(exitPosition + new Vector2I(1, -y), 2,  new Vector2I(0, 9));
             
-            // wallCells.Add(exitPosition + new Vector2I(-2, -(y + 1)));
-            // floorCells.Add(exitPosition + new Vector2I(-1, -(y + 1)));
-            // floorCells.Add(exitPosition + new Vector2I(0, -(y + 1)));
-            // wallCells.Add(exitPosition + new Vector2I(1, -(y + 1)));
+            // wallCells.Add(exitPosition + new Vector2I(-2, -y));
+            // floorCells.Add(exitPosition + new Vector2I(-1, -y));
+            // floorCells.Add(exitPosition + new Vector2I(0, -y));
+            // wallCells.Add(exitPosition + new Vector2I(1, -y));
         }
 
         // previousLayer.SetCellsTerrainConnect(
@@ -138,13 +138,13 @@ public partial class Rooms : Node2D
 #endregion
         
         TileMapLayer tileMapLayer = room.GetNode<TileMapLayer>("Floor&Walls");
-        Node2D marker = room.GetNode<Node2D>("Entrance/Marker2D2");
+        Marker2D marker = room.GetNode<Marker2D>("Entrance/Marker2D");
 
         int entranceX = tileMapLayer.LocalToMap(marker.Position).X;
-        int offsetY = tileMapLayer.GetUsedRect().Size.Y * TileSize;
+        int offsetY = tileMapLayer.GetUsedRect().Size.Y;
 
         room.Position = previousDoor.GlobalPosition
-                        + Vector2I.Up * offsetY
+                        + Vector2I.Up * offsetY * TileSize
                         + Vector2.Up * (1 + corridorHeight) * TileSize
                         + Vector2.Left * entranceX * TileSize;
     }

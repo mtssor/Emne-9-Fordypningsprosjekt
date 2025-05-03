@@ -9,7 +9,6 @@ namespace NewGameProject.Scripts.Entities.Player;
 [GlobalClass]
 public partial class Player : CharacterBody2D
 {
-	private AnimationPlayer _playerAnimations;
 	
 	public AnimatedSprite2D PlayerAnimations { get; set; }
 	public StateMachine PlayerStateMachine { get; set; }
@@ -29,9 +28,6 @@ public partial class Player : CharacterBody2D
 		_sword = GetNode<Node2D>("Weapon/Sword");
 		_crossbow = GetNode<Node2D>("Weapon/Crossbow");
 		_activeWeapon = _sword;
-		
-		
-		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 
 		PlayerStateMachine.Init(this, PlayerAnimations, PlayerMoveComponent);
 

@@ -19,7 +19,6 @@ public partial class Sword : Node2D
         _animationPlayer = GetNode<AnimationPlayer>("SwordAnimation");
 
         _hitbox.Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
-        _hitbox.Monitoring = false;
     }
 
     public void Attack()

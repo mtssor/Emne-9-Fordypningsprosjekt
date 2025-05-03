@@ -23,6 +23,8 @@ public partial class Enemy : CharacterBody2D
 		_moveComponent = GetNode<IMoveComponent>("MoveComponent");
 		
 		_stateMachine.Init(this, _animations, _moveComponent);
+
+		Connect(Node.SignalName.TreeExited, new Callable(GetParent(), "OnEnemyKilled"));
 	}
 
 	public override void _PhysicsProcess(double delta) => _stateMachine.ProcessPhysics(delta);
