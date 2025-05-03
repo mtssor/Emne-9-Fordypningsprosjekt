@@ -105,6 +105,9 @@ public partial class Rooms : Node2D
         StaticBody2D previousDoor = PreviousRoom.GetNode<StaticBody2D>("Doors/Door");
         TileMapLayer previousLayer = PreviousRoom.GetNode<TileMapLayer>("Floor&Walls");
 
+        
+#region CorridorGeneration
+        
         Vector2I exitPosition = previousLayer.LocalToMap(previousDoor.Position) + Vector2I.Up * 2;
         uint corridorHeight = GD.Randi() % 5 + 2;
 
@@ -132,7 +135,7 @@ public partial class Rooms : Node2D
         //     wallCells,
         //     TerrainSetIndex,
         //     WallTerrainIndex);
-        
+#endregion
         
         TileMapLayer tileMapLayer = room.GetNode<TileMapLayer>("Floor&Walls");
         Node2D marker = room.GetNode<Node2D>("Entrance/Marker2D2");
