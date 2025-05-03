@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 [autoload]
 
 SignalBus="res://Scripts/Systems/Utilities/SignalBus.cs"
+SavedData="*res://Scripts/Systems/Utilities/SavedData.cs"
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
 [display]
 
@@ -29,7 +31,7 @@ project/assembly_name="New Game Project"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gaea/plugin.cfg")
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
 
 [input]
 
