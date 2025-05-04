@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cga31d128fnbh"]
-
-[ext_resource type="Script" uid="uid://t63fgv2w3gx1" path="res://Scripts/Systems/MapGeneration/ProceduralDungeonGeneration.cs" id="1_ktirr"]
-
-[node name="MapGeneration" type="Node2D"]
-script = ExtResource("1_ktirr")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb8uhqd8dq6ip"]
+[gd_scene load_steps=3 format=3 uid="uid://bb8uhqd8dq6ip"]
 
-[ext_resource type="TileSet" uid="uid://4drihvjul7ba" path="res://Resources/Level/LevelTileSet.tres" id="1_ugk2b"]
+[ext_resource type="Script" uid="uid://d10142petbrxv" path="res://Scripts/Systems/DungeonGeneration/DungeonGenerator.cs" id="1_0j4r0"]
+[ext_resource type="TileSet" uid="uid://ck2iqpc5ja2gq" path="res://Resources/Level/DungeonFloors&Walls.tres" id="2_0j4r0"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_0j4r0")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = ExtResource("1_ugk2b")
+[node name="MapLayout" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_0j4r0")
