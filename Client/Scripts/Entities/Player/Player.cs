@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 using NewGameProject.Scripts.Entities.Player.Components;
 using NewGameProject.Scripts.Entities.Weapons;
 using NewGameProject.Scripts.Systems.StateMachine;
+using NewGameProject.Utilities.Strategy;
 
 namespace NewGameProject.Scripts.Entities.Player;
 
@@ -18,7 +20,8 @@ public partial class Player : CharacterBody2D
 	private Node2D _sword;
 	private Node2D _crossbow;
 	private Node2D _activeWeapon;
-	
+	public List<BaseWeaponStrategy> Upgrades { get; set; } = [];
+
 	public override void _Ready()
 	{
 		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");

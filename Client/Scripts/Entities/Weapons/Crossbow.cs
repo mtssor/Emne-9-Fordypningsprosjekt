@@ -1,4 +1,6 @@
 using Godot;
+using NewGameProject.Utilities.Strategy;
+using NewGameProject.Utilities.Strategy.ArrowUpgrades;
 
 namespace NewGameProject.Scripts.Entities.Weapons;
 
@@ -6,7 +8,8 @@ public partial class Crossbow : Node2D
 {
     [Export] public PackedScene ArrowScene;
     [Export] public float FireCooldown = 0.5f;
-
+    
+    
     private double _lastShotTime;
 
     public override void _Process(double delta)
@@ -26,8 +29,9 @@ public partial class Crossbow : Node2D
         if (ArrowScene == null)
             return;
         
-        var arrow = ArrowScene.Instantiate() as Node2D;
+        Arrow arrow = ArrowScene.Instantiate() as Arrow;
         GetParent().AddChild(arrow);
+        
         arrow.GlobalPosition = GlobalPosition;
         arrow.Rotation = Rotation;
 

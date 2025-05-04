@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace NewGameProject.Rooms;
 
 public partial class EnemySpawnEffect : AnimatedSprite2D
 {
