@@ -112,15 +112,15 @@ public partial class Rooms : Node2D
         
         
     #region CorridorGeneration
-        // Vector2I exitPosition = previousLayer.LocalToMap(previousDoor.Position) + Vector2I.Up * 2;
-        // uint corridorHeight = GD.Randi() % 5 + 2;
-        // for (int y = 0; y < corridorHeight; y++)
-        // {
-        //     previousLayer.SetCell(exitPosition + new Vector2I(-2, -y), WallTileSourceId,  WallTileAtlas);
-        //     previousLayer.SetCell(exitPosition + new Vector2I(-1, -y), FloorTileSourceId,  RightFloorTileAtlas);
-        //     previousLayer.SetCell(exitPosition + new Vector2I(0, -y), FloorTileSourceId,  LeftFloorTileAtlas);
-        //     previousLayer.SetCell(exitPosition + new Vector2I(1, -y), WallTileSourceId,  WallTileAtlas);
-        // }
+        Vector2I exitPosition = previousLayer.LocalToMap(previousDoor.Position) + Vector2I.Up * 2;
+        uint corridorHeight = GD.Randi() % 5 + 2;
+        for (int y = 0; y < corridorHeight; y++)
+        {
+            previousLayer.SetCell(exitPosition + new Vector2I(-2, -y), WallTileSourceId,  WallTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(-1, -y), FloorTileSourceId,  RightFloorTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(0, -y), FloorTileSourceId,  LeftFloorTileAtlas);
+            previousLayer.SetCell(exitPosition + new Vector2I(1, -y), WallTileSourceId,  WallTileAtlas);
+        }
     #endregion
         
         
@@ -132,6 +132,7 @@ public partial class Rooms : Node2D
         
         room.Position = previousDoor.GlobalPosition
                         + Vector2I.Up * offsetY * TileSize
+                        + Vector2.Up * (corridorHeight) * TileSize
                         + Vector2.Left * entranceX * TileSize;
     }
 }

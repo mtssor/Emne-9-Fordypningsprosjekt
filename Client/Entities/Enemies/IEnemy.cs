@@ -1,6 +1,6 @@
 using Godot;
-using NewGameProject.Scripts.Components.Interfaces;
-using NewGameProject.Scripts.Systems.StateMachine;
+using NewGameProject.Components.Interfaces;
+using StateMachine = NewGameProject.Utilities.StateMachine.StateMachine;
 
 namespace NewGameProject.Entities.Enemies;
 

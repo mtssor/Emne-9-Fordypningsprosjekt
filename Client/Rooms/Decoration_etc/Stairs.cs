@@ -1,5 +1,5 @@
 using Godot;
-using NewGameProject.Entities.Player;
+using Player = NewGameProject.Entities.Player.Player;
 using SceneTransistor = NewGameProject.Globals.SceneTransistor;
 
 namespace NewGameProject.Rooms.Decoration_etc;

@@ -1,6 +1,6 @@
 using Godot;
-using NewGameProject.Scripts.Components;
-using NewGameProject.Scripts.Models;
+using NewGameProject.Components;
+using NewGameProject.Old.Models;
 
 namespace NewGameProject.Entities.Player.Weapons;
 

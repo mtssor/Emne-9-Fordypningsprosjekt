@@ -32,10 +32,10 @@ public partial class Upgrade : Area2D
 
 	private void OnBodyEntered(Node2D body)
 	{
-		if (body is Player.Player player)
-		{
-			player.Upgrades.Add(_strategy);
-			QueueFree();
-		}
+		// if (body is Player.Player player)
+		// {
+		// 	player.Upgrades.Add(_strategy);
+		// 	QueueFree();
+		// }
 	}
 }

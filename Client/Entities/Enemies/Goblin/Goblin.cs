@@ -1,6 +1,6 @@
 using System;
 using Godot;
-using NewGameProject.Scripts.Systems.StateMachine;
+using StateMachine = NewGameProject.Utilities.StateMachine.StateMachine;
 
 namespace NewGameProject.Entities.Enemies.Goblin;
 

@@ -1,5 +1,5 @@
 using Godot;
-using NewGameProject.Scripts.Components;
+using HealthUpdate = NewGameProject.Components.HealthUpdate;
 
 namespace NewGameProject.Globals;
 

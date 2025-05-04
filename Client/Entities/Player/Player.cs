@@ -1,12 +1,10 @@
-using System;
 using Godot;
-using NewGameProject.Scripts.Components;
-using NewGameProject.Scripts.Entities.Player.Components;
-using NewGameProject.Scripts.Entities.Weapons;
-using NewGameProject.Scripts.Systems.StateMachine;
-using NewGameProject.Scripts.UI;
+using NewGameProject.Components;
+using NewGameProject.Entities.Player.Weapons;
+using NewGameProject.UI;
+using NewGameProject.Utilities.StateMachine;
 
-namespace NewGameProject.Scripts.Entities.Player;
+namespace NewGameProject.Entities.Player;
 
 /// <summary>
 /// Main player controller. Handles animation, movement, input, death logic, weapon switching
@@ -36,7 +34,7 @@ public partial class Player : CharacterBody2D
 	private HealthComponent _healthComponent;
 	
 	// Animations effects for getting hit, dying etc.
-	private AnimatedSprite2D _animatedEffects;
+	// private AnimatedSprite2D _animatedEffects;
 	
 	private bool _isDead = false;
 	
@@ -44,7 +42,7 @@ public partial class Player : CharacterBody2D
 	{
 		// references key components
 		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");
-		_animatedEffects = GetNode<AnimatedSprite2D>("AnimatedEffects");
+		// _animatedEffects = GetNode<AnimatedSprite2D>("AnimatedEffects");
 		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 		
 		PlayerStateMachine = GetNode<StateMachine>("StateMachine");

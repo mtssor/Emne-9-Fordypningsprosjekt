@@ -1,5 +1,5 @@
 using Godot;
-using NewGameProject.Scripts.Components.Interfaces;
+using NewGameProject.Components.Interfaces;
 
 namespace NewGameProject.Entities.Enemies.Goblin;
 

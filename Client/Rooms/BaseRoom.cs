@@ -14,9 +14,8 @@ public partial class BaseRoom : Node2D
     private readonly Dictionary<string, PackedScene> _enemiesToSpawn = new()
     {
         ["Goblin"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Goblin/Goblin.tscn"),
-        ["Zombie"] = ResourceLoader.Load<PackedScene>("res://Nodes/Entities/Enemies/Zombie.tscn"),
+        ["Zombie"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Zombie.tscn"),
     };
-
 
     private int _numberOfEnemies;
 
@@ -82,8 +81,11 @@ public partial class BaseRoom : Node2D
                 case false when _random.Next(_enemiesToSpawn.Count) == 0:
                     enemy = _enemiesToSpawn["Zombie"].Instantiate<CharacterBody2D>();
                     break;
+                case false when _random.Next(_enemiesToSpawn.Count) == 1:
+                    enemy = _enemiesToSpawn["Goblin"].Instantiate<CharacterBody2D>();
+                    break;
                 default:
-                    //enemy = Enemies["Goblin"].Instantiate<CharacterBody2D>();
+                    enemy = _enemiesToSpawn["Goblin"].Instantiate<CharacterBody2D>();
                     break;
             }
 

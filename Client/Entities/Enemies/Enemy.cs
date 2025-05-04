@@ -1,13 +1,17 @@
 using Godot;
-using NewGameProject.Scripts.Components.Interfaces;
-using NewGameProject.Scripts.Systems.StateMachine;
+using NewGameProject.Components.Interfaces;
+using NewGameProject.Utilities.StateMachine;
 
 namespace NewGameProject.Entities.Enemies;
 
+
+/// <summary>
+/// Class for generic enemies. Manages state machine, animations, effects etc.
+/// </summary>
 public partial class Enemy : CharacterBody2D
 {
-	private AnimatedSprite2D _animations;
-	private AnimatedSprite2D _animatedEffects;
+	private AnimatedSprite2D _animations; // Main animations (idle, move)
+	private AnimatedSprite2D _animatedEffects; // certain effects like getting hit or death
 
 	private StateMachine _stateMachine;
 	private IMoveComponent _moveComponent;
@@ -22,8 +26,6 @@ public partial class Enemy : CharacterBody2D
 		_moveComponent = GetNode<IMoveComponent>("MoveComponent");
 		
 		_stateMachine.Init(this, _animations, _moveComponent);
-
-		Connect(Node.SignalName.TreeExited, new Callable(GetParent(), "OnEnemyKilled"));
 	}
 
 	public override void _PhysicsProcess(double delta) => _stateMachine.ProcessPhysics(delta);
