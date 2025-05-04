@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqd1t5vnby7r5"]
+
+[ext_resource type="Script" uid="uid://bb1s33sst7ds5" path="res://Scripts/Entities/Weapons/Staff.cs" id="1_3bntv"]
+[ext_resource type="Texture2D" uid="uid://bs7oc14ofba68" path="res://Assets/Dungeon Assets/Dungeon Gathering Full Ver. 1.1/New Items [Update]/16x16 Items Pack.png" id="2_epx3m"]
+[ext_resource type="AudioStream" uid="uid://cd80ct7lsfoqp" path="res://Assets/Sound/Magic spell sound.wav" id="3_epx3m"]
+
+[node name="Staff" type="Node2D"]
+script = ExtResource("1_3bntv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+texture = ExtResource("2_epx3m")
+region_enabled = true
+region_rect = Rect2(64, 96, 16, 16)
+
+[node name="MagicSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_epx3m")
+volume_db = -25.0

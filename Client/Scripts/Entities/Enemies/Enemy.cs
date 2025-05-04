@@ -5,10 +5,14 @@ using NewGameProject.Scripts.Systems.StateMachine;
 
 namespace NewGameProject.Scripts.Entities.Enemies;
 
+
+/// <summary>
+/// Class for generic enemies. Manages state machine, animations, effects etc.
+/// </summary>
 public partial class Enemy : CharacterBody2D
 {
-	private AnimatedSprite2D _animations;
-	private AnimatedSprite2D _animatedEffects;
+	private AnimatedSprite2D _animations; // Main animations (idle, move)
+	private AnimatedSprite2D _animatedEffects; // certain effects like getting hit or death
 
 	private StateMachine _stateMachine;
 	private IMoveComponent _moveComponent;

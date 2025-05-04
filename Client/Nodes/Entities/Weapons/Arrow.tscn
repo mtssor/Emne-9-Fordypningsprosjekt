@@ -9,7 +9,7 @@ height = 17.5
 
 [node name="Arrow" type="Area2D"]
 collision_layer = 16
-collision_mask = 32
+collision_mask = 4
 script = ExtResource("1_06uid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
