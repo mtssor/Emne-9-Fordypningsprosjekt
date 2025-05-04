@@ -1,4 +1,4 @@
-using NewGameProject.Scripts.Entities.Weapons;
+using Arrow = NewGameProject.Entities.Player.Weapons.Arrow;
 
 namespace NewGameProject.Utilities.Strategy.ArrowUpgrades;
 

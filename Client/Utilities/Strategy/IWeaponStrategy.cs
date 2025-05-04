@@ -1,4 +1,4 @@
-using NewGameProject.Scripts.Entities.Weapons;
+using NewGameProject.Entities.Player.Weapons;
 
 namespace NewGameProject.Utilities.Strategy;
 

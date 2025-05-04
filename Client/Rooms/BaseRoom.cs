@@ -1,7 +1,7 @@
 using System;
 using Godot;
 using Godot.Collections;
-using NewGameProject.Rooms.Furniture;
+using Door = NewGameProject.Rooms.Decoration_etc.Door;
 
 namespace NewGameProject.Rooms;
 
@@ -13,7 +13,7 @@ public partial class BaseRoom : Node2D
 
     private readonly Dictionary<string, PackedScene> _enemiesToSpawn = new()
     {
-        ["Goblin"] = ResourceLoader.Load<PackedScene>("res://Nodes/Entities/Enemies/Goblin.tscn"),
+        ["Goblin"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Goblin/Goblin.tscn"),
     };
 
 
@@ -28,7 +28,7 @@ public partial class BaseRoom : Node2D
     {
         _random = new Random();
         
-        _tileMapLayer = GetNode<TileMapLayer>("Walls");
+        _tileMapLayer = GetNode<TileMapLayer>("Floor&Walls");
         _entrances = GetNode<Node2D>("Entrance");
         _doorContainer = GetNode<Node2D>("Doors");
         _enemyPositionsContainer = GetNode<Node2D>("EnemyPositions");

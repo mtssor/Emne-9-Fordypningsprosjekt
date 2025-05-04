@@ -1,5 +1,4 @@
 using Godot;
-using NewGameProject.Scripts.Models;
 
 namespace NewGameProject.Scripts.Components;
 

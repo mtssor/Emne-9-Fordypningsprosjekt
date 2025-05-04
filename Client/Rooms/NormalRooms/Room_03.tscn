@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://be008co2yq4u3"]
 
 [ext_resource type="PackedScene" uid="uid://c2g24ct1tfevu" path="res://Rooms/BaseRoom.tscn" id="1_jp0ko"]
-[ext_resource type="PackedScene" uid="uid://c8eow2xsgwxwx" path="res://Rooms/Furniture/Door.tscn" id="2_80fkv"]
+[ext_resource type="PackedScene" uid="uid://c8eow2xsgwxwx" path="res://Rooms/Decoration_etc/Door.tscn" id="2_80fkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80fkv"]
 size = Vector2(64, 8)

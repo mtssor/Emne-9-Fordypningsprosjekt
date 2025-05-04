@@ -16,9 +16,10 @@ config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [autoload]
 
-SignalBus="res://Scripts/Systems/Utilities/SignalBus.cs"
-SavedData="*res://Scripts/Systems/Utilities/SavedData.cs"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+SignalBus="res://Globals/SignalBus.cs"
+SavedData="*res://Globals/SavedData.cs"
+SceneTransistor="*res://Globals/SceneTransistor.tscn"
 
 [display]
 
@@ -92,6 +93,7 @@ weapon_crossbow={
 2d_physics/layer_5="Player attack"
 2d_physics/layer_6="Enemy"
 2d_physics/layer_7="Enemy attack"
+2d_physics/layer_8="Stairs"
 
 [rendering]
 

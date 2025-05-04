@@ -1,7 +1,6 @@
 using System;
 using Godot;
-using Godot.Collections;
-using NewGameProject.Scripts.Systems.Utilities;
+using SavedData = NewGameProject.Globals.SavedData;
 
 namespace NewGameProject.Rooms;
 
