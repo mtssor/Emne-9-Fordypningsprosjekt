@@ -1,52 +1,52 @@
 using Godot;
 using NewGameProject.Scripts.Components;
 using NewGameProject.Scripts.Models;
-using NewGameProject.Utilities.Strategy;
-using NewGameProject.Utilities.Strategy.ArrowUpgrades;
 
 namespace NewGameProject.Scripts.Entities.Weapons;
 
-[GlobalClass]
+/// <summary>
+/// Script for arrow projectiles fired from crossbow weapon, damages enemies
+/// </summary>
 public partial class Arrow : Area2D
 {
-    [Export] public float Speed { get; set; } = 400f;
-    [Export] public float Damage { get; set; } = 5f;
-    [Export] public float KnockbackForce { get; set; } = 50f;
-    [Export] public float StickTime = 0.2f;
-
-    public Vector2 Direction = Vector2.Right;
-    private bool _stuck = false;
-
-    private Player.Player _player;
-    public override void _Ready()
-    {
-        _player = GetOwner<Player.Player>();
-        Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
-    }
+    [Export] public float Speed = 400f; // Arrow projectile speed
+    [Export] public float Damage = 2f; // Specified damage dealt to enemies
+    [Export] public float StickTime = 0.2f; // Time the arrow "sticks" to enemies before disappearing
+    [Export] public float KnockbackForce = 50f; // specified knockback force
+    
+    public Vector2 Direction = Vector2.Right; // travel direction
+    private bool _stuck = false; // checks if arrow has hit something
 
     public override void _PhysicsProcess(double delta)
     {
         if (_stuck)
             return;
         
-        foreach (BaseWeaponStrategy upgrade in _player.Upgrades)
-        {
-            if (upgrade is IArrowStrategy arrowUpgrades)
-                arrowUpgrades.ApplyUpgrade(this);
-        }
-        
+        // moves arrow in specified direction 
         Position += Direction * Speed * (float)delta;
     }
 
+    public override void _Ready()
+    {
+        // Checks for collision with enemy
+        Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
+    }
+
+    /// <summary>
+    /// Called when arrow collides with another Area2D (enemy, wall)
+    /// Deals damage if target hit has a hurtbox
+    /// </summary>
+    /// <param name="area"></param>
     private async void OnAreaEntered(Area2D area)
     {
         if (_stuck)
             return;
         
-        _stuck = true;
+        _stuck = true; // prevents arrows from colliding multiple times
         
         if (area is HurtboxComponent hurtbox)
         {
+            // constructs attack
             Attack attack = new()
             {
                 Damage = Damage,
@@ -58,11 +58,10 @@ public partial class Arrow : Area2D
             hurtbox.HandleWeaponCollision(attack);
         }
         
+        // stops movement, and removes the arrow after a delay 
         SetPhysicsProcess(false);
-        
-        
-        await ToSignal(GetTree().CreateTimer(StickTime), "timeout");
-        QueueFree();
+        await ToSignal(GetTree().CreateTimer(StickTime), "timeout"); 
+        QueueFree(); 
         
         
     }

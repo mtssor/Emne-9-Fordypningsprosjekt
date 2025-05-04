@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://f72ut1k5mf6p"]
+
+[ext_resource type="Script" uid="uid://dlplf6i4y33cp" path="res://Scripts/UI/HUD.cs" id="1_fsrse"]
+[ext_resource type="Script" uid="uid://cw81sxsnjghd" path="res://Scripts/UI/WeaponUI.cs" id="2_w478i"]
+[ext_resource type="Texture2D" uid="uid://d3odnbou5eslt" path="res://Assets/Red 128x16.png" id="3_b8q5w"]
+[ext_resource type="Texture2D" uid="uid://cuyvypgo46ya0" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="3_h1rp0"]
+[ext_resource type="Texture2D" uid="uid://bj8ydthpu7tft" path="res://Assets/Green 128x16.png" id="4_5wmrv"]
+[ext_resource type="Texture2D" uid="uid://cneh4jo7bapx5" path="res://Assets/Crossbow.png" id="4_430px"]
+[ext_resource type="Texture2D" uid="uid://bs7oc14ofba68" path="res://Assets/Dungeon Assets/Dungeon Gathering Full Ver. 1.1/New Items [Update]/16x16 Items Pack.png" id="7_2cv2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8q5w"]
+atlas = ExtResource("7_2cv2c")
+region = Rect2(64, 96, 16, 16)
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsrse")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="MarginContainer/Overlay"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 138.0
+offset_bottom = 26.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/Overlay/TopLeftContainer"]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("3_b8q5w")
+texture_progress = ExtResource("4_5wmrv")
+
+[node name="BottomLeftContainer" type="VBoxContainer" parent="MarginContainer/Overlay"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(-10, 10)
+
+[node name="WeaponUI" type="Control" parent="MarginContainer/Overlay/BottomLeftContainer"]
+layout_mode = 2
+script = ExtResource("2_w478i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -4.0
+
+[node name="WeaponSlot1" type="VBoxContainer" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponIcon1" type="TextureRect" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer/WeaponSlot1"]
+layout_mode = 2
+texture = ExtResource("3_h1rp0")
+
+[node name="WeaponSlot2" type="VBoxContainer" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponIcon2" type="TextureRect" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer/WeaponSlot2"]
+layout_mode = 2
+texture = ExtResource("4_430px")
+
+[node name="WeaponSlot3" type="VBoxContainer" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponIcon3" type="TextureRect" parent="MarginContainer/Overlay/BottomLeftContainer/WeaponUI/HBoxContainer/WeaponSlot3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_b8q5w")
