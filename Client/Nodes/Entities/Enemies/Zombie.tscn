@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cwkmtx0phy7oc"]
+[gd_scene load_steps=43 format=3 uid="uid://cwkmtx0phy7oc"]
 
 [ext_resource type="Script" uid="uid://bxro8r07j7ays" path="res://Scripts/Entities/Enemies/Monsters/Zombie.cs" id="1_ixd7x"]
 [ext_resource type="Texture2D" uid="uid://dlw2w52f0vpv5" path="res://Assets/Dungeon Assets/DG-Monsters-Expansion/Zombies Pack/Zombie Idle-Sheet 1 16x16.png" id="2_1pdti"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_6g0hb"]
 [ext_resource type="Script" uid="uid://cr5xujps5ptuu" path="res://Scripts/Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
 [ext_resource type="Script" uid="uid://b7eby1olwl2i8" path="res://Scripts/Entities/Enemies/Monsters/Monster Attacks/ZombieAttack.cs" id="13_r651h"]
+[ext_resource type="Script" uid="uid://cj1nfinqcfk48" path="res://Scripts/Systems/StateMachine/States/Stunnable.cs" id="14_dg3xm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixd7x"]
 atlas = ExtResource("2_1pdti")
@@ -264,7 +265,7 @@ ChaseRadius = 1000.0
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_3hhqp")
-MaxHealth = 20.0
+MaxHealth = 60.0
 metadata/_custom_type_script = "uid://cjut6gxctf25n"
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
@@ -283,3 +284,6 @@ script = ExtResource("13_r651h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
 shape = SubResource("CapsuleShape2D_dg3xm")
+
+[node name="Stunnable" type="Node" parent="."]
+script = ExtResource("14_dg3xm")

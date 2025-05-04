@@ -2,6 +2,10 @@ using Godot;
 
 namespace NewGameProject.Scripts.Models;
 
+/// <summary>
+/// Data structure for weapon attacks.
+/// Carries info for damage, knockback, position, and stun duration
+/// </summary>
 public class Attack
 {
     public float Damage;

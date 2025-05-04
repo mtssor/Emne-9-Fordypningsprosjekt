@@ -5,13 +5,16 @@ using NewGameProject.Scripts.Models;
 
 namespace NewGameProject.Scripts.Entities.Weapons;
 
+/// <summary>
+/// Magic projectile sent by Staff that damages enemies on contact
+/// </summary>
 public partial class MagicBolt : Area2D
 {
-    [Export] public float Speed = 150;
-    [Export] public float Damage = 4f;
-    [Export] public float ExplosionRadius = 50f;
-    [Export] public float KnockBackForce = 40f;
-    [Export] public float StunDuration = 1.0f;
+    [Export] public float Speed = 150; // projectile speed
+    [Export] public float Damage = 4f; // specified damage
+    [Export] public float ExplosionRadius = 50f; // Explosion radius on hit
+    [Export] public float KnockBackForce = 40f; // specified knockback force
+    [Export] public float StunDuration = 0f; // stun duration, currently set to not stun
 
     public Vector2 Direction = Vector2.Right;
 
@@ -27,6 +30,11 @@ public partial class MagicBolt : Area2D
         Position += Direction * Speed * (float)delta;
     }
 
+    /// <summary>
+    /// Handles collision with enemy hurtbox
+    /// Applies damage then makes bolt disappear
+    /// </summary>
+    /// <param name="area"></param>
     private void OnAreaEntered(Area2D area)
     {
         if (area is HurtboxComponent hurtbox)
@@ -45,6 +53,7 @@ public partial class MagicBolt : Area2D
         QueueFree();
     }
 
+    // Area of effect explosion damage
     private void Explode()
     {
         var spaceState = GetWorld2D().DirectSpaceState;
