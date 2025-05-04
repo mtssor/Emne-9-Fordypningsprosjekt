@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Scripts/Systems/StateMachine/States/Move.cs" id="5_vc5s1"]
 [ext_resource type="Script" uid="uid://coy5xq8ag2qnm" path="res://Scripts/Components/HurtboxComponent.cs" id="5_w7j3y"]
 [ext_resource type="PackedScene" uid="uid://dskkf5tejxtve" path="res://Nodes/Components/MoveComponent.tscn" id="7_6g0hb"]
-[ext_resource type="Script" uid="uid://cr5xujps5ptuu" path="res://Scripts/Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
+[ext_resource type="Script" uid="uid://cr5xujps5ptuu" path="res://Entities/Enemies/EnemyMoveComponent.cs" id="8_ugj40"]
 [ext_resource type="Script" uid="uid://b7eby1olwl2i8" path="res://Scripts/Entities/Enemies/Monsters/Monster Attacks/ZombieAttack.cs" id="13_r651h"]
 [ext_resource type="Script" uid="uid://cj1nfinqcfk48" path="res://Scripts/Systems/StateMachine/States/Stunnable.cs" id="14_dg3xm"]
 
@@ -261,7 +261,6 @@ metadata/_custom_type_script = "uid://cde3i6tvml3ry"
 
 [node name="MoveComponent" parent="." instance=ExtResource("7_6g0hb")]
 script = ExtResource("8_ugj40")
-ChaseRadius = 1000.0
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_3hhqp")

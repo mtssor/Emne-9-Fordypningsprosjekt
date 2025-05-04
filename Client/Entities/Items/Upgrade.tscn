@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://gdm3tqgt7jxk"]
+
+[ext_resource type="Script" uid="uid://d4hjd40euhdds" path="res://Entities/Items/Upgrade.cs" id="1_ygoln"]
+[ext_resource type="Resource" uid="uid://dc2gbe1p52u4u" path="res://Entities/Items/SpeedUp(Arrow).tres" id="2_ygoln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygoln"]
+size = Vector2(16, 16)
+
+[node name="Upgrade" type="Area2D" node_paths=PackedStringArray("_upgradeLabel", "_sprite")]
+collision_mask = 8
+script = ExtResource("1_ygoln")
+_upgradeLabel = NodePath("UpgradeLabel")
+_sprite = NodePath("Sprite2D")
+_strategy = ExtResource("2_ygoln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ygoln")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+vframes = 2
+
+[node name="UpgradeLabel" type="Label" parent="."]
+offset_left = -77.0
+offset_top = -32.0
+offset_right = 77.0
+offset_bottom = -9.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8.85, 8.85)

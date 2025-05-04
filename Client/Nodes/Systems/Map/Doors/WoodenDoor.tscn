@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5e3o1xrvj2nt"]
+
+[ext_resource type="Texture2D" uid="uid://d3cmguqt20vo1" path="res://Assets/Use this for Dungeon rooms etc/Doors/Gate sheet 1.png" id="1_37opq"]
+[ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Scripts/Systems/StateMachine/StateMachine.cs" id="2_dib14"]
+[ext_resource type="Script" uid="uid://cck6s2762a7t7" path="res://Scripts/Systems/StateMachine/State.cs" id="3_k6qaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6poyv"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_37opq"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_okdp5"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333, 0.3, 0.366667, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_7sliu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sliu"]
+_data = {
+&"Close": SubResource("Animation_37opq"),
+&"Open": SubResource("Animation_okdp5"),
+&"RESET": SubResource("Animation_7sliu")
+}
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_6poyv")
+
+[node name="WoodenDoor" type="Sprite2D" parent="."]
+texture = ExtResource("1_37opq")
+offset = Vector2(0, -16)
+hframes = 16
+vframes = 2
+frame = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WoodenDoor"]
+libraries = {
+&"": SubResource("AnimationLibrary_7sliu")
+}
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_dib14")
+metadata/_custom_type_script = "uid://b2s0p7brbl3hb"
+
+[node name="State" type="Node" parent="StateMachine"]
+script = ExtResource("3_k6qaw")
+metadata/_custom_type_script = "uid://cck6s2762a7t7"

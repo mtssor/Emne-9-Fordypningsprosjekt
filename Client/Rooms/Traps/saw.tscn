@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d1n8dwsk17oif"]
+
+[node name="Saw" type="Area2D"]

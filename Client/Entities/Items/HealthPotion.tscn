@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://pb7de5lcf8hk"]
+
+[node name="HealthPotion" type="Node2D"]

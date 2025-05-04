@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpeedArrowStrategy" load_steps=3 format=3 uid="uid://dc2gbe1p52u4u"]
+
+[ext_resource type="Texture2D" uid="uid://celcnyvaon2i1" path="res://Assets/Use this for Dungeon rooms etc/Icons/Icon 11.png" id="1_dsycd"]
+[ext_resource type="Script" uid="uid://0fnn2mtjwk4m" path="res://Utilities/Strategy/ArrowUpgrades/SpeedArrowStrategy.cs" id="2_adxgj"]
+
+[resource]
+script = ExtResource("2_adxgj")
+SpeedUpgrade = 50.0
+Texture = ExtResource("1_dsycd")
+UpgradeText = "Speed Up"
+metadata/_custom_type_script = "uid://0fnn2mtjwk4m"

@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://b76hbm36fcd5t"]
+
+[ext_resource type="Texture2D" uid="uid://bq4ocsq7mmhgb" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="1_xpnu7"]
+[ext_resource type="Texture2D" uid="uid://dxifndyo7eykl" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_spritesheet.png" id="2_g4bt5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g0hb"]
+atlas = ExtResource("1_xpnu7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugj40"]
+atlas = ExtResource("1_xpnu7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0khim"]
+atlas = ExtResource("1_xpnu7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03a0k"]
+atlas = ExtResource("1_xpnu7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6agof"]
+atlas = ExtResource("2_g4bt5")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhn7t"]
+atlas = ExtResource("2_g4bt5")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vhp1"]
+atlas = ExtResource("2_g4bt5")
+region = Rect2(16, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g0hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugj40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0khim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03a0k")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6agof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhn7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vhp1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 15.0
+}]

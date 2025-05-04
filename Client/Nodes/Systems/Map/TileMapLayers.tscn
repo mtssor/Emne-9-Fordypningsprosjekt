@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfbehgpihs8xt"]
+
+[ext_resource type="TileSet" uid="uid://ck2iqpc5ja2gq" path="res://Resources/Level/DungeonFloors&Walls.tres" id="1_t5ju7"]
+
+[node name="RoomTileMaps" type="Node2D"]
+
+[node name="DecorationLayer" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("1_t5ju7")
+
+[node name="WallLayer" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("1_t5ju7")
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+z_index = -1
+z_as_relative = false
+tile_set = ExtResource("1_t5ju7")
+
+[node name="WaterLayer" type="TileMapLayer" parent="."]
+show_behind_parent = true
+clip_children = 1
+z_index = -1
+tile_set = ExtResource("1_t5ju7")

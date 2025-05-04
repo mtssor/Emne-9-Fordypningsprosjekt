@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd5dnuj1fx236"]
+
+[ext_resource type="Script" uid="uid://dtr3shx32y7h8" path="res://Globals/SceneTransistor.cs" id="1_w2cpf"]
+
+[sub_resource type="Animation" id="Animation_w2cpf"]
+resource_name = "ChangeSceneToFile"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeSceneToFile"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fyc2q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwfxv"]
+_data = {
+&"ChangeSceneToFile": SubResource("Animation_w2cpf"),
+&"RESET": SubResource("Animation_fyc2q")
+}
+
+[node name="SceneTransistor" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_w2cpf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pwfxv")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0)

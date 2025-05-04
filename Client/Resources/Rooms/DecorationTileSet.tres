@@ -1,0 +1,40 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://08ts4h524p02"]
+
+[ext_resource type="Texture2D" uid="uid://deopqjxqfeua1" path="res://Assets/Use this for Dungeon rooms etc/Light.png" id="1_7lm46"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqt8j"]
+resource_name = "LightBeams"
+texture = ExtResource("1_7lm46")
+0:0/0 = 0
+0:0/0/z_index = 2
+1:0/0 = 0
+1:0/0/z_index = 2
+2:0/0 = 0
+2:0/0/z_index = 2
+3:0/0 = 0
+3:0/0/z_index = 2
+4:0/0 = 0
+4:0/0/z_index = 2
+5:0/0 = 0
+5:0/0/z_index = 2
+6:0/0 = 0
+6:0/0/z_index = 2
+0:1/0 = 0
+0:1/0/z_index = 2
+1:1/0 = 0
+1:1/0/z_index = 2
+2:1/0 = 0
+2:1/0/z_index = 2
+3:1/0 = 0
+3:1/0/z_index = 2
+4:1/0 = 0
+4:1/0/z_index = 2
+5:1/0 = 0
+5:1/0/z_index = 2
+2:2/0 = 0
+2:2/0/z_index = 2
+3:2/0 = 0
+3:2/0/z_index = 2
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_qqt8j")
