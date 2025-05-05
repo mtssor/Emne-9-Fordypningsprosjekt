@@ -37,6 +37,8 @@ public partial class Zombie : CharacterBody2D
             GD.PrintErr("Zombie: Could not find player or move component.");
         }
 
+        Connect("tree_exited", new Callable(GetParent(), "OnEnemyKilled"));
+        
         _stateMachine.Init(this, _animations, _moveComponent);
     }
 

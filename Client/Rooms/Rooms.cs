@@ -9,7 +9,7 @@ public partial class Rooms : Node2D
 {
 #region RoomScenes
     private static readonly PackedScene[] StartRooms = [
-        GD.Load<PackedScene>("res://Rooms/SpawnRooms/Prison.tscn")
+        GD.Load<PackedScene>("res://Rooms/SpawnRooms/PrisonHub.tscn")
     ];
 
     private static readonly PackedScene[] IntermediateRooms = [

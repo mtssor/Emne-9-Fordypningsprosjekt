@@ -7,6 +7,10 @@
 [node name="BaseRoom" type="Node2D"]
 script = ExtResource("1_5kpfm")
 
+[node name="WaterLevel" type="TileMapLayer" parent="."]
+z_index = -1
+tile_set = ExtResource("2_s2etk")
+
 [node name="Floor&Walls" type="TileMapLayer" parent="."]
 z_index = -1
 tile_set = ExtResource("2_s2etk")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://db0gyl1udy4oo"]
 
 [ext_resource type="TileSet" uid="uid://ck2iqpc5ja2gq" path="res://Resources/Level/DungeonFloors&Walls.tres" id="1_oywwx"]
-[ext_resource type="PackedScene" uid="uid://c5e3o1xrvj2nt" path="res://Old/Map/Doors/WoodenDoor.tscn" id="2_aw761"]
+[ext_resource type="PackedScene" uid="uid://c5e3o1xrvj2nt" path="res://Rooms/Decoration/Doors/WoodenDoor.tscn" id="2_aw761"]
 
 [sub_resource type="Animation" id="Animation_6gaoi"]
 resource_name = "Candle"

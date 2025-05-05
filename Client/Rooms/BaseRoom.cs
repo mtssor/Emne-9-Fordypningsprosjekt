@@ -76,14 +76,11 @@ public partial class BaseRoom : Node2D
             switch (_bossRoom)
             {
                 case true:
-                    // enemy = EnemyScenes.SomeBoss.Instantiate<CharacterBody2D>()
+                    enemy = _enemiesToSpawn["BossEnemy"].Instantiate<CharacterBody2D>();
                     _numberOfEnemies = 15;
                     break;
-                case false when _random.Next(_enemiesToSpawn.Count) == 0:
+                case false when _random.Next() % 2 == 0:
                     enemy = _enemiesToSpawn["Zombie"].Instantiate<CharacterBody2D>();
-                    break;
-                case false when _random.Next(_enemiesToSpawn.Count) == 1:
-                    enemy = _enemiesToSpawn["Goblin"].Instantiate<CharacterBody2D>();
                     break;
                 default:
                     enemy = _enemiesToSpawn["Goblin"].Instantiate<CharacterBody2D>();

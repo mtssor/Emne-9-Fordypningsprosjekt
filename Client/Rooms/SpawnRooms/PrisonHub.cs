@@ -1,7 +1,7 @@
 using Godot;
 using NewGameProject.Entities.Player;
 
-namespace NewGameProject.Scenes;
+namespace NewGameProject.Rooms.SpawnRooms;
 
 public partial class PrisonHub : Node2D
 {
