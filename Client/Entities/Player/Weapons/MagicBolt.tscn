@@ -8,7 +8,7 @@ radius = 5.0
 
 [node name="MagicBolt" type="Area2D"]
 collision_layer = 16
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_qgkdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

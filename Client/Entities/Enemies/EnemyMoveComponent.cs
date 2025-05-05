@@ -43,6 +43,13 @@ public partial class EnemyMoveComponent : Node, IMoveComponent
     /// <returns></returns>
     public Vector2 GetMovementDirection()
     {
+        if (_target == null)
+        {
+            GD.PrintErr("EnemyMoveComponent: No target assigned.");
+            return Vector2.Zero;
+        }
+
+        
         if (_target == null || _owner == null)
             return Vector2.Zero;
         
@@ -60,6 +67,8 @@ public partial class EnemyMoveComponent : Node, IMoveComponent
             return Vector2.Zero;
         
         return toPlayer.Normalized();
+        
+        
     }
 
     /// <summary>

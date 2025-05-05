@@ -24,6 +24,8 @@ public partial class HurtboxComponent : Area2D
     public override void _Ready()
     {
         _healthComponent = Owner.GetNode<HealthComponent>("HealthComponent");
+        if (_healthComponent == null)
+            GD.PrintErr($"[HurtboxComponent] Could not find HealthComponent on {Owner.Name}");
 		
         _animations = Owner.GetNode<AnimatedSprite2D>("Animations");
         _animatedEffects = Owner.GetNode<AnimatedSprite2D>("AnimatedEffects");
@@ -35,20 +37,25 @@ public partial class HurtboxComponent : Area2D
     public void HandleWeaponCollision(Attack attack)
     {
         GD.Print($"Hurtbox: Enemy took {attack.Damage} damage");
-        
-        _healthComponent?.Damage(attack.Damage);
-        
-        // hit feedback if still alive 
-        if (_healthComponent is { HasHealthRemaining: true })
-            _animatedEffects.Play("Hit");
 
-        // apply stun (if applicable)
+        if (_healthComponent == null)
+        {
+            GD.PrintErr("HurtboxComponent: Missing HealthComponent!");
+            return;
+        }
+
+        _healthComponent.Damage(attack.Damage);
+
+        if (_healthComponent.HasHealthRemaining)
+            _animatedEffects?.Play("Hit");
+
         if (attack.StunDuration > 0f)
         {
             var stunnable = Owner.GetNodeOrNull<Stunnable>("Stunnable");
             stunnable?.ApplyStun(attack.StunDuration);
         }
     }
+
     
     private void OnDeath()
     {

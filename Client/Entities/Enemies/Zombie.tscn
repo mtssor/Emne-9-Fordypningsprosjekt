@@ -236,7 +236,7 @@ animation = &"Move"
 [node name="AnimatedEffects" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.59375, 1.59375)
 sprite_frames = SubResource("SpriteFrames_imr63")
-animation = &"Death"
+animation = &"Hit"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -265,7 +265,7 @@ ChaseRadius = 1000.0
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("11_s3qly")
-MaxHealth = 60.0
+MaxHealth = 12.0
 metadata/_custom_type_script = "uid://cjut6gxctf25n"
 
 [node name="HurtboxComponent" type="Area2D" parent="."]

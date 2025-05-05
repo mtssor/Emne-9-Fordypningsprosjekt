@@ -15,6 +15,7 @@ public partial class BaseRoom : Node2D
     {
         ["Goblin"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Goblin/Goblin.tscn"),
         ["Zombie"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Zombie.tscn"),
+        ["BossEnemy"] = ResourceLoader.Load<PackedScene>("res://Entities/Enemies/Boss/BossEnemy.tscn"),
     };
 
     private int _numberOfEnemies;

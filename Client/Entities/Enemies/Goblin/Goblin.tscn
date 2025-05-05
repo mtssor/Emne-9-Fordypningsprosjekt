@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cwkmtx0phy7oc"]
 
-[ext_resource type="Script" uid="uid://y5qe7e760wxx" path="res://Entities/Enemies/Enemy.cs" id="1_mij0t"]
+[ext_resource type="Script" uid="uid://dxlw24t76aq42" path="res://Entities/Enemies/Goblin/Goblin.cs" id="1_r1f68"]
 [ext_resource type="SpriteFrames" uid="uid://dhn87fm8fpdw2" path="res://Resources/Entities/Enemies/GoblinAnimations.tres" id="2_mij0t"]
 [ext_resource type="SpriteFrames" uid="uid://b76hbm36fcd5t" path="res://Resources/Entities/Enemies/GoblinAnimatedEffects.tres" id="3_6g0hb"]
 [ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Utilities/StateMachine/StateMachine.cs" id="3_nh0y8"]
@@ -15,11 +15,11 @@
 radius = 5.0
 height = 14.0
 
-[node name="Goblin" type="CharacterBody2D"]
+[node name="Goblin" type="CharacterBody2D" groups=["enemies"]]
 z_index = 1
 collision_layer = 32
 collision_mask = 27
-script = ExtResource("1_mij0t")
+script = ExtResource("1_r1f68")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_mij0t")

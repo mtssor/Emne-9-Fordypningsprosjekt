@@ -19,18 +19,27 @@ public partial class Zombie : CharacterBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        // caches key child nodes
         _animations = GetNode<AnimatedSprite2D>("Animations");
         _animatedEffects = GetNode<AnimatedSprite2D>("AnimatedEffects");
-		
+
         _stateMachine = GetNode<StateMachine>("StateMachine");
         _moveComponent = GetNode<IMoveComponent>("MoveComponent");
 
-        Connect("tree_exited", new Callable(GetParent(), "OnEnemyKilled"));
-        
-        // init state machine with Zombie dependency 
+        // NEW: Find player in scene
+        var player = GetTree().Root.GetNodeOrNull<Player.Player>("GameScene/Player");
+        if (player != null && _moveComponent is EnemyMoveComponent move)
+        {
+            move.SetTarget(player);
+            GD.Print("Zombie: Assigned player target.");
+        }
+        else
+        {
+            GD.PrintErr("Zombie: Could not find player or move component.");
+        }
+
         _stateMachine.Init(this, _animations, _moveComponent);
     }
+
 
     // handles physics-based movement
     public override void _PhysicsProcess(double delta) => _stateMachine.ProcessPhysics(delta);

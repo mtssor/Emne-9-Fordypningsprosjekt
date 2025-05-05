@@ -20,7 +20,11 @@ public partial class MagicBolt : Area2D
 
     public override void _Ready()
     {
+        // contact with enemies
         Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
+        
+        // contact with walls/objects
+        Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
     }
     
     
@@ -49,6 +53,12 @@ public partial class MagicBolt : Area2D
             hurtbox.HandleWeaponCollision(attack);
         }
         
+        QueueFree();
+    }
+
+    private void OnBodyEntered(Node body)
+    {
+        GD.Print("MagicBolt hit body: ", body.Name);
         QueueFree();
     }
 
