@@ -77,7 +77,6 @@ public partial class BaseRoom : Node2D
             {
                 case true:
                     enemy = _enemiesToSpawn["BossEnemy"].Instantiate<CharacterBody2D>();
-                    _numberOfEnemies = 15;
                     break;
                 case false when _random.Next() % 2 == 0:
                     enemy = _enemiesToSpawn["Zombie"].Instantiate<CharacterBody2D>();
