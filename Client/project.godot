@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RogueLike"
-run/main_scene="uid://dx48o2p1hocbv"
+run/main_scene="uid://djxuboem3us2h"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [autoload]

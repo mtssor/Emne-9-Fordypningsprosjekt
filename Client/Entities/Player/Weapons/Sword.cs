@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 using NewGameProject.Components;
+using NewGameProject.Globals;
 using NewGameProject.Old.Models;
 
 namespace NewGameProject.Entities.Player.Weapons;
@@ -27,6 +28,9 @@ public partial class Sword : Node2D
         // connected hit signal
         _hitbox.Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
         _hitbox.Monitoring = false;
+        
+        foreach (float damageUp in SavedData.AllDamageUp)
+            Damage *= damageUp;
     }
 
     /// <summary>

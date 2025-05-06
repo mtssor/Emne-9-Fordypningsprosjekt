@@ -1,5 +1,6 @@
 using Godot;
 using NewGameProject.Components;
+using NewGameProject.Globals;
 using NewGameProject.Old.Models;
 
 namespace NewGameProject.Entities.Player.Weapons;
@@ -28,6 +29,9 @@ public partial class Arrow : Area2D
 
     public override void _Ready()
     {
+        foreach (float damageUp in SavedData.AllDamageUp)
+            Damage *= damageUp;
+        
         // Checks for collision with enemy
         Connect("area_entered", new Callable(this, nameof(OnAreaEntered)));
     }

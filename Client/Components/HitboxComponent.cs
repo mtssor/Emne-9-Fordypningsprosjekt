@@ -8,8 +8,8 @@ namespace NewGameProject.Components;
 [GlobalClass]
 public partial class HitboxComponent : Area2D
 {
-	[Signal]
-	public delegate void AreaEnteredEventHandler(Area2D area);
+	// [Signal]
+	// public delegate void AreaEnteredEventHandler(Area2D area);
 	
 	public HitboxComponent()
 	{
