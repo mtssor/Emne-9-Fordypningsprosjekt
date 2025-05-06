@@ -25,7 +25,7 @@ public partial class Spikes : Area2D
 	{
 		if (body is Player player)
 		{
-			Player.HealthComponent.Damage(SpikeDamage);
+			player.HealthComponent.Damage(SpikeDamage);
 		}
 	}
 }

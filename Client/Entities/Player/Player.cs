@@ -18,6 +18,7 @@ public partial class Player : CharacterBody2D
 	public StateMachine PlayerStateMachine { get; set; } // State machine handling movement logic
 	public PlayerMoveComponent PlayerMoveComponent  { get; set; } // Script for movement input (WASD, arrow keys)
 
+	public HealthComponent HealthComponent => _healthComponent;
 
 	// available weapons for player
 	private Node2D _sword;
@@ -32,6 +33,8 @@ public partial class Player : CharacterBody2D
 	
 	// Health system
 	private HealthComponent _healthComponent;
+	
+	
 	
 	// Animations effects for getting hit, dying etc.
 	// private AnimatedSprite2D _animatedEffects;
