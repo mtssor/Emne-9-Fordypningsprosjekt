@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://burijign5nq61"]
+
+[ext_resource type="Texture2D" uid="uid://d3ck1rd7jneav" path="res://Assets/Use this for Dungeon rooms etc/Barrel down sheet 2.png" id="1_jovgc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rs4o"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8tnh"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg2p5"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yf30"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy6rr"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s52sw"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iqco"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykcmd"]
+atlas = ExtResource("1_jovgc")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ok31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rs4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8tnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg2p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yf30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy6rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s52sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iqco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykcmd")
+}],
+"loop": true,
+"name": &"SpilltBarrel",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dplma"]
+radius = 7.0
+height = 14.0
+
+[node name="SpilltBarrel" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_2ok31")
+animation = &"SpilltBarrel"
+autoplay = "SpilltBarrel"
+frame = 7
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_dplma")

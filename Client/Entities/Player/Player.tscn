@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs0aj4k5p614o"]
+[gd_scene load_steps=28 format=3 uid="uid://cs0aj4k5p614o"]
 
 [ext_resource type="Script" uid="uid://cm5tdgl7fdf8x" path="res://Entities/Player/Player.cs" id="1_26xe5"]
 [ext_resource type="Texture2D" uid="uid://ds8be78hpm2jx" path="res://Assets/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_42706"]
@@ -111,22 +111,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ig8mh"]
-radius = 5.0
-height = 14.0
-
-[sub_resource type="Animation" id="Animation_42706"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_6m5lc"]
-resource_name = "sword"
-length = 0.333337
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0tcod"]
-_data = {
-&"RESET": SubResource("Animation_42706"),
-&"sword": SubResource("Animation_6m5lc")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_061yh"]
+size = Vector2(7, 10)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -142,7 +128,8 @@ frame = 5
 frame_progress = 0.113215
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ig8mh")
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_061yh")
 
 [node name="Weapon" type="Node2D" parent="."]
 
@@ -155,11 +142,6 @@ visible = false
 [node name="Staff" parent="Weapon" instance=ExtResource("6_0tcod")]
 visible = false
 MagicBoltScene = ExtResource("7_jqtth")
-
-[node name="PlayerAnimations" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0tcod")
-}
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StartingState")]
 script = ExtResource("5_0tcod")

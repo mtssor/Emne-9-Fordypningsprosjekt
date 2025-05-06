@@ -12,12 +12,11 @@ namespace NewGameProject.Entities.Player;
 [GlobalClass]
 public partial class Player : CharacterBody2D
 {
-	private AnimationPlayer _playerAnimations; // Handles certain animations like death
-	
 	public AnimatedSprite2D PlayerAnimations { get; set; } // references animation sprites for Idle, movement etc.
 	public StateMachine PlayerStateMachine { get; set; } // State machine handling movement logic
 	public PlayerMoveComponent PlayerMoveComponent  { get; set; } // Script for movement input (WASD, arrow keys)
 
+	public HealthComponent HealthComponent => _healthComponent;
 
 	// available weapons for player
 	private Node2D _sword;
@@ -33,6 +32,8 @@ public partial class Player : CharacterBody2D
 	// Health system
 	private HealthComponent _healthComponent;
 	
+	
+	
 	// Animations effects for getting hit, dying etc.
 	// private AnimatedSprite2D _animatedEffects;
 	
@@ -43,7 +44,6 @@ public partial class Player : CharacterBody2D
 		// references key components
 		PlayerAnimations = GetNode<AnimatedSprite2D>("Animations");
 		// _animatedEffects = GetNode<AnimatedSprite2D>("AnimatedEffects");
-		_playerAnimations = GetNode<AnimationPlayer>("PlayerAnimations");
 		
 		PlayerStateMachine = GetNode<StateMachine>("StateMachine");
 		PlayerMoveComponent = GetNode<PlayerMoveComponent>("MoveComponent");

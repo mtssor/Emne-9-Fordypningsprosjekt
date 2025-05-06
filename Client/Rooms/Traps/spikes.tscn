@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnp0xy62e24gj"]
+[gd_scene load_steps=7 format=3 uid="uid://dnp0xy62e24gj"]
 
 [ext_resource type="Texture2D" uid="uid://gjrmh088fgd3" path="res://Assets/Use this for Dungeon rooms etc/Set 3.4.png" id="1_gqy02"]
+[ext_resource type="Script" uid="uid://b8actcihbv5xu" path="res://Rooms/Traps/Spikes.cs" id="1_wg0kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqy02"]
 size = Vector2(14, 2)
@@ -91,12 +92,17 @@ _data = {
 }
 
 [node name="Spikes" type="Area2D"]
+collision_layer = 65
+collision_mask = 10
+script = ExtResource("1_wg0kw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_gqy02")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visibility_layer = 0
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_gqy02")
 
@@ -110,3 +116,4 @@ region_rect = Rect2(1, 5, 14, 2)
 libraries = {
 &"": SubResource("AnimationLibrary_artxg")
 }
+speed_scale = 0.5

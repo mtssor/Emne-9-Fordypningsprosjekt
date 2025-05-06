@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://cuq7ls8e7hutc"]
+
+[ext_resource type="Texture2D" uid="uid://bdhs38g747n6o" path="res://Assets/Dungeon Assets/DG-Monsters-Expansion/King Slime Pack/Slime King Idle & Hit 1.png" id="1_45syk"]
+[ext_resource type="Script" uid="uid://b2s0p7brbl3hb" path="res://Utilities/StateMachine/StateMachine.cs" id="2_7uxw5"]
+[ext_resource type="PackedScene" uid="uid://bpkdc7nl3m4ms" path="res://Entities/Enemies/Boss/Laser.tscn" id="2_2855p"]
+[ext_resource type="Script" uid="uid://duniycpn074ax" path="res://Utilities/StateMachine/States/Idle.cs" id="3_2855p"]
+[ext_resource type="Script" uid="uid://cde3i6tvml3ry" path="res://Utilities/StateMachine/States/Move.cs" id="4_lx5g2"]
+[ext_resource type="Script" uid="uid://cjut6gxctf25n" path="res://Components/HealthComponent.cs" id="5_ylkvu"]
+[ext_resource type="Script" uid="uid://cq3txgk4vqscq" path="res://Entities/Enemies/Boss/BossMoveComponent.cs" id="6_7uxw5"]
+[ext_resource type="Script" uid="uid://coy5xq8ag2qnm" path="res://Components/HurtboxComponent.cs" id="6_hv6yh"]
+[ext_resource type="Script" uid="uid://d2ylc88pv17bf" path="res://Entities/Enemies/Boss/BossEnemy.cs" id="7_lu4t8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw0te"]
+atlas = ExtResource("1_45syk")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_203od"]
+atlas = ExtResource("1_45syk")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka4g5"]
+atlas = ExtResource("1_45syk")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8q50"]
+atlas = ExtResource("1_45syk")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyeii"]
+atlas = ExtResource("1_45syk")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i767s"]
+atlas = ExtResource("1_45syk")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1yw0"]
+atlas = ExtResource("1_45syk")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_413gt"]
+atlas = ExtResource("1_45syk")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5knw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw0te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_203od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8q50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyeii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i767s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1yw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_413gt")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v1hx"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kx1ua"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t15rv"]
+radius = 14.0
+height = 46.0
+
+[node name="BossEnemy" type="CharacterBody2D"]
+script = ExtResource("7_lu4t8")
+LaserBeamScene = ExtResource("2_2855p")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m5knw")
+animation = &"Move"
+frame = 5
+frame_progress = 0.140889
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3v1hx")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_7uxw5")
+metadata/_custom_type_script = "uid://b2s0p7brbl3hb"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_2855p")
+metadata/_custom_type_script = "uid://duniycpn074ax"
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("4_lx5g2")
+metadata/_custom_type_script = "uid://cde3i6tvml3ry"
+
+[node name="BossMoveComponent" type="Node" parent="."]
+script = ExtResource("6_7uxw5")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("5_ylkvu")
+MaxHealth = 100.0
+metadata/_custom_type_script = "uid://cjut6gxctf25n"
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("6_hv6yh")
+metadata/_custom_type_script = "uid://coy5xq8ag2qnm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kx1ua")
+
+[node name="AttackZone" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t15rv")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="LaserSpawn" type="Marker2D" parent="."]

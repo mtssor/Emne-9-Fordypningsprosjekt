@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dexjr2f3g4d2p"]
 
 [ext_resource type="TileSet" uid="uid://ck2iqpc5ja2gq" path="res://Resources/Level/DungeonFloors&Walls.tres" id="1_qygkq"]
-[ext_resource type="PackedScene" uid="uid://c5e3o1xrvj2nt" path="res://Old/Map/Doors/WoodenDoor.tscn" id="2_sjcgc"]
+[ext_resource type="PackedScene" uid="uid://c5e3o1xrvj2nt" path="res://Rooms/Decoration/Doors/WoodenDoor.tscn" id="2_sjcgc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjcgc"]
 size = Vector2(20, 5)
