@@ -39,6 +39,8 @@ public partial class LoginUIScreen : Control
 		GetNode<Button>("CenterContainer/VBoxContainer/LeaderBoardButton").Pressed += OnLeaderboard;
 
 		// Create and configure the HTTPRequest node
+=======
+		// Add one HttpRequest node
 		_http = new HttpRequest();
 		AddChild(_http);
 		_http.RequestCompleted += OnRequestDone;
@@ -48,6 +50,10 @@ public partial class LoginUIScreen : Control
 	private void OnRegister()
 	{
 		// Prepare JSON from input fields
+=======
+	// ---------- buttons ----------
+	private void OnRegister()
+	{
 		var json = JsonSerializer.Serialize(new
 		{
 			Username = _user.Text,
@@ -57,6 +63,8 @@ public partial class LoginUIScreen : Control
 		_currentAction = "register";
 		_http.Request(
 			BASE + "/api/v1/auth/register",
+=======
+			BASE + "/api/auth/register",
 			new[] { "Content-Type: application/json" },
 			HttpClient.Method.Post,
 			json);
@@ -67,6 +75,9 @@ public partial class LoginUIScreen : Control
 	private void OnLogin()
 	{
 		// Sends login credentials
+=======
+	private void OnLogin()
+	{
 		var json = JsonSerializer.Serialize(new
 		{
 			username = _user.Text,
@@ -75,6 +86,8 @@ public partial class LoginUIScreen : Control
 		_currentAction = "login";
 		_http.Request(
 			BASE + "/api/v1/auth/login",
+=======
+			BASE + "/api/auth/login",
 			new[] { "Content-Type: application/json" },
 			HttpClient.Method.Post,
 			json);
@@ -82,6 +95,7 @@ public partial class LoginUIScreen : Control
 	}
 
 	// Leaderboard button
+=======
 	private void OnLeaderboard()
 	{
 		string[] headers = _jwt == "" ? null : new[] { $"Authorization: Bearer {_jwt}" };
@@ -91,11 +105,18 @@ public partial class LoginUIScreen : Control
 	}
 
 	// ---------- HTTP response handler ----------
+=======
+		_http.Request(BASE + "/api/leaderboard", headers);
+		_status.Text = "Loading leaderboard…";
+	}
+
+	// ---------- HTTP callback ----------
 	private void OnRequestDone(long result, long code, string[] _h, byte[] body)
 	{
 		var text = body.Length > 0 ? Encoding.UTF8.GetString(body) : "";
 
 		// show errors immediately
+=======
 		if (code < 200 || code >= 300)
 		{
 			_status.Text = $"Error {code}: {text}";
@@ -103,6 +124,7 @@ public partial class LoginUIScreen : Control
 		}
 
 		// handles success for each action type
+=======
 		switch (_currentAction)
 		{
 			case "register":
@@ -120,6 +142,9 @@ public partial class LoginUIScreen : Control
 					
 					_playButton.Disabled = false;
 					
+=======
+				tok.ValueKind == JsonValueKind.String)
+				{
 					_popupDialog.DialogText = "Logged in successfully!";
 					_popupDialog.Popup();
 				}
@@ -144,4 +169,6 @@ public partial class LoginUIScreen : Control
 		GetTree().ChangeSceneToFile("res://Scenes/GameScene.tscn");
 	}
 	
+}
+=======
 }

@@ -39,7 +39,6 @@ placeholder_text = "Password"
 layout_mode = 2
 disabled = true
 text = "Play"
-
 [node name="LoginButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Login"
