@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DamageArrowStrategy" load_steps=3 format=3 uid="uid://c7gp0cxpcs2h1"]
+
+[ext_resource type="Texture2D" uid="uid://jad1goevsp02" path="res://Assets/Use this for Dungeon rooms etc/Icons/Icon 3.png" id="1_5wfj4"]
+[ext_resource type="Script" uid="uid://bebl85hubjrx7" path="res://Utilities/Strategy/ArrowUpgrades/DamageArrowStrategy.cs" id="2_wxu7k"]
+
+[resource]
+script = ExtResource("2_wxu7k")
+_damage = 5.0
+Texture = ExtResource("1_5wfj4")
+UpgradeText = "Damage Up"
+metadata/_custom_type_script = "uid://bebl85hubjrx7"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd80ct7lsfoqp"
+path="res://.godot/imported/Magic spell sound.wav-e3193af593263f55818c29bf40e84c8c.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Magic spell sound.wav"
+dest_files=["res://.godot/imported/Magic spell sound.wav-e3193af593263f55818c29bf40e84c8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

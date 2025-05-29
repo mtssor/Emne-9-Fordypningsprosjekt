@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://0wnxa1osxf0x"]
+
+[ext_resource type="Texture2D" uid="uid://bheh5ee6ucfdx" path="res://Assets/Use this for Dungeon rooms etc/Doors/Basic Door 1.png" id="1_dvr60"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvr60"]
+size = Vector2(32, 16)
+
+[sub_resource type="Animation" id="Animation_3qocp"]
+resource_name = "Close"
+length = 0.500003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_dvr60"]
+resource_name = "Open"
+length = 0.500003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 6]
+}
+
+[sub_resource type="Animation" id="Animation_j5dks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4dus"]
+_data = {
+&"Close": SubResource("Animation_3qocp"),
+&"Open": SubResource("Animation_dvr60"),
+&"RESET": SubResource("Animation_j5dks")
+}
+
+[node name="WallGate" type="Sprite2D"]
+texture = ExtResource("1_dvr60")
+hframes = 7
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 0
+shape = SubResource("RectangleShape2D_dvr60")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r4dus")
+}

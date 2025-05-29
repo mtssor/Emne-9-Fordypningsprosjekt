@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3ctg13hr642t"]
+
+[ext_resource type="Texture2D" uid="uid://cy5456pslqjrp" path="res://Assets/Use this for Dungeon rooms etc/Chests/Chest 1 Sheet.png" id="1_1h23t"]
+[ext_resource type="Script" uid="uid://bna12iwskhj0f" path="res://Rooms/Decoration/Chest.cs" id="1_gvecr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvecr"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvecr"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjjct"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrojd"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6bfo"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6x5g"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0op5"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wdrb"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvf5e"]
+atlas = ExtResource("1_1h23t")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt540"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvecr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjjct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrojd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6bfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6x5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0op5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wdrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvf5e")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 10.0
+}]
+
+[node name="Chest" type="Area2D"]
+script = ExtResource("1_gvecr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+shape = SubResource("RectangleShape2D_gvecr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vt540")
+animation = &"Open"

@@ -4,9 +4,11 @@
 
 [node name="LoginUI" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_gl5nq")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -33,6 +35,10 @@ placeholder_text = "Email"
 layout_mode = 2
 placeholder_text = "Password"
 
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Play"
 [node name="LoginButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Login"
@@ -54,3 +60,6 @@ layout_mode = 2
 [node name="APIRequest" type="HTTPRequest" parent="."]
 
 [node name="PopupDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

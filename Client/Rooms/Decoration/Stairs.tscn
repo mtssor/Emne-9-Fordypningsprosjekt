@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vf8c3lqg7po"]
+
+[ext_resource type="Script" uid="uid://dg8qbb1p1vjgn" path="res://Rooms/Decoration/Stairs.cs" id="1_0ifms"]
+[ext_resource type="Texture2D" uid="uid://u6hoqlyt5j82" path="res://Assets/Use this for Dungeon rooms etc/New Stairs.png" id="2_tk88u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk88u"]
+size = Vector2(16, 16)
+
+[node name="Stairs" type="Area2D"]
+z_index = 1
+collision_layer = 128
+collision_mask = 10
+script = ExtResource("1_0ifms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tk88u")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+shape = SubResource("RectangleShape2D_tk88u")

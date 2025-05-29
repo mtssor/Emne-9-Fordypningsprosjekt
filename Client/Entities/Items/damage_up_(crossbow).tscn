@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bperxjmuxmq10"]
+
+[ext_resource type="PackedScene" uid="uid://gdm3tqgt7jxk" path="res://Entities/Items/Upgrade.tscn" id="1_xocoi"]
+[ext_resource type="Resource" uid="uid://c7gp0cxpcs2h1" path="res://Entities/Items/Damage Up (Arrows).tres" id="2_lwns2"]
+
+[node name="Upgrade" instance=ExtResource("1_xocoi")]
+_strategy = ExtResource("2_lwns2")
